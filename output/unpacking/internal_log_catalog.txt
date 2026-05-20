@@ -1,0 +1,116 @@
+# Internal log / error message catalog
+
+Pulled from `.rdata` of the unpacked dump. These are the exact
+format-strings the library passes to its spdlog-style logger
+(`{}` placeholders). Use them as a Rosetta stone for live slicer
+logs: any line that matches a pattern here came from the named
+subsystem.
+
+## `AccountManager` (2 messages)
+
+- `AccountManager::load_from_json() failed! exception={}`
+- `AccountManager::request_project_id, body={}`
+
+## `DeviceSubscribeManager` (21 messages)
+
+- `DeviceSubscribeManager update: dev_id = {}, dev_ip = {}, access_code = {}`
+- `DeviceSubscribeManager: auto create local channel failed, won't retry. dev_id = {}`
+- `DeviceSubscribeManager: auto create local channel succeeded, check cloud channel later. dev_id = {}`
+- `DeviceSubscribeManager: can't create channel by {}`
+- `DeviceSubscribeManager: cloud channel status doesn't support switching to local(uptime too short or ip missing or ...), try later. dev_id = {}`
+- `DeviceSubscribeManager: dev_id {} has existing channels, do nothing`
+- `DeviceSubscribeManager: device {} is subscribing by channel {}, do nothing`
+- `DeviceSubscribeManager: existing cloud channel of dev_id {} will be closed cause of force subscribe`
+- `DeviceSubscribeManager: existing local channel of dev_id {} will be closed cause of force subscribe`
+- `DeviceSubscribeManager: local channel doesn't provide data for a long time, switch to cloud. dev_id = {}`
+- `DeviceSubscribeManager: local or cloud channel missing, stop auto switch. dev_id = {}`
+- `DeviceSubscribeManager: request subscribe cloud device. dev_id = {}`
+- `DeviceSubscribeManager: request subscribe local device. dev_id = {}`
+- `DeviceSubscribeManager: request unSubscribe device. dev_id = {}`
+- `DeviceSubscribeManager: start auto close cloud channel of dev_id = {}`
+- `DeviceSubscribeManager: start auto create local channel. dev_id = {}`
+- `DeviceSubscribeManager: status of local channel doesn't support closing cloud channel, retry later. dev_id = {}`
+- `DeviceSubscribeManager: stop a pending channel. channel = {}`
+- `DeviceSubscribeManager: there is an existing local channel. dev_id = {}`
+- `DeviceSubscribeManager: unSubscribe a existing channel. channel = {}`
+- `DeviceSubscribeManager::InternalHandleMessage parse json failed`
+
+## `FTJob` (1 messages)
+
+- `FTJob failed, error = {}`
+
+## `GenericSubscriptionManager` (6 messages)
+
+- `GenericSubscriptionManager: ISubscribeChannel.Subscribe return false, can't subscribe {}`
+- `GenericSubscriptionManager: can't create channel by topic {}`
+- `GenericSubscriptionManager: client closed, channel dead, topic = {}`
+- `GenericSubscriptionManager: request subscribe topic {}`
+- `GenericSubscriptionManager: request unsubscribe all topics`
+- `GenericSubscriptionManager: request unsubscribe topic {}`
+
+## `MqttClient` (4 messages)
+
+- `MqttClientKeeper: reconnect a manager = {}`
+- `MqttClientKeeper: reconnect exception`
+- `MqttClientKeeper: reconnect exception = {}`
+- `MqttClientKeeper: thread exiting`
+
+## `MqttConnectionManager` (25 messages)
+
+- `MqttConnectionManager create! self = {}`
+- `MqttConnectionManager destroy! self = {}, alive channels count = {}`
+- `MqttConnectionManager: Connection(mqtt) OK! self = {}, cli id = {}`
+- `MqttConnectionManager: Connection(mqtt) failed! self = {}, return code = {}, reason code = {}, retry= {}`
+- `MqttConnectionManager: Connection(mqtt) failed! self = {}, return code = {}, reason code = {}, won't retry any more`
+- `MqttConnectionManager: client disconnect exception, self = {}, exception = {}`
+- `MqttConnectionManager: client disconnect exception, self = {}, unknown exception`
+- `MqttConnectionManager: connect exception, self = {}, exception = {}`
+- `MqttConnectionManager: connect exception, self = {}, unknown exception`
+- `MqttConnectionManager: registerChannel channel = {}`
+- `MqttConnectionManager: start to resubscribe, channel = {}`
+- `MqttConnectionManager: unregisterChannel channel = {}`
+- `MqttConnectionManager::OnAutoReconnection!, self = {}`
+- `MqttConnectionManager::OnConnected! self = {}`
+- `MqttConnectionManager::OnConnectionLost!, self = {}, cause = {}`
+- `MqttConnectionManager::OnMessageDeliveried!, self = {}`
+- `MqttConnectionManager::PerformSubscribe client disconnect, self = {}`
+- `MqttConnectionManager::PerformSubscribe, self = {}, exception`
+- `MqttConnectionManager::PerformSubscribe, self = {}, exception = {}`
+- `MqttConnectionManager::PerformUnsubscribe, self = {}, exception`
+- `MqttConnectionManager::PerformUnsubscribe, self = {}, exception = {}`
+- `MqttConnectionManager::Publish, self = {}, exception`
+- `MqttConnectionManager::Publish, self = {}, exception = {}`
+- `MqttConnectionManager::RegisterChannel, exception={}`
+- `MqttConnectionManager::UnregisterChannel, exception = {}`
+
+## `MqttLocalSubscribeChannel` (6 messages)
+
+- `MqttLocalSubscribeChannel local mqtt client start connecting. topic = {}, ip = {}`
+- `MqttLocalSubscribeChannel: local mqtt channel GetDriver return nullptr. channel = {}`
+- `MqttLocalSubscribeChannel: local mqtt channel RegisterChannel failed. channel = {}`
+- `MqttLocalSubscribeChannel: local mqtt client connected, start subscribe. channel = {}`
+- `MqttLocalSubscribeChannel: local mqtt client connection failed. channel = {}`
+- `MqttLocalSubscribeChannel: local mqtt client start connecting. channel = {}`
+
+## `MqttSubscribeChannel` (9 messages)
+
+- `MqttSubscribeChannel: GetDriver not ready, cant subscribe. channel = {}`
+- `MqttSubscribeChannel: called unsubscribe. channel = {}`
+- `MqttSubscribeChannel: cloud channel closed, topic = {}`
+- `MqttSubscribeChannel: local channel closed, topic = {}`
+- `MqttSubscribeChannel: subscribe channel failure: channel = {}`
+- `MqttSubscribeChannel: subscribe channel success: topic = {}`
+- `MqttSubscribeChannel: subscribe failed! channel = {}, extra_info = {}, retrying, retry count = {}`
+- `MqttSubscribeChannel: subscribe failed! channel = {}, extra_info = {}, stop retrying, retry count = {}`
+- `MqttSubscribeChannel::HandleMessage parse json failed`
+
+## `agent-export-error` (7 messages)
+
+- `{}, bambu_network_del_rating_picture_oss returned error:{}`
+- `{}, bambu_network_get_model_mall_rating returned error:{}`
+- `{}, bambu_network_get_my_token returned error:{}`
+- `{}, bambu_network_get_oss_config returned error:{}`
+- `{}, bambu_network_get_user_tasks returned error:{}`
+- `{}, bambu_network_put_rating_picture_oss returned error:{}`
+- `{}, bambu_network_update_cert returned error:{}`
+

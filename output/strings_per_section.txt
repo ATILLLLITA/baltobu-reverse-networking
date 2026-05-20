@@ -1,0 +1,3 @@
+.1M@             28868
+<header/none>       108
+.rsrc               10

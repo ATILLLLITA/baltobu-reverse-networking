@@ -1,0 +1,70 @@
+[run_headless] reusing existing project baltobu-unpacked; running DecompileExports.java
+openjdk version "25.0.2" 2026-01-20
+OpenJDK Runtime Environment (build 25.0.2+10-Ubuntu-124.04)
+OpenJDK 64-Bit Server VM (build 25.0.2+10-Ubuntu-124.04, mixed mode)
+INFO  Using log config file: jar:file:/home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /home/fboisselier/baltobu-reverse/output/ghidra/ghidra_headless_baltobu-unpacked.log (LoggingInitialization)  
+INFO  Loading user preferences: /home/fboisselier/.config/ghidra/ghidra_12.0.4_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (950 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (2234 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 58 extension points (18 false positives) (ClassSearcher)  
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldOffset has been called by org.apache.felix.framework.util.SecureAction (file:/home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/lib/org.apache.felix.framework-7.0.5.jar)
+WARNING: Please consider reporting this to the maintainers of class org.apache.felix.framework.util.SecureAction
+WARNING: sun.misc.Unsafe::staticFieldOffset will be removed in a future release
+INFO  HEADLESS Script Paths:
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/fboisselier/baltobu-reverse/ghidra/scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu-unpacked (HeadlessAnalyzer)  
+INFO  Opening project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu-unpacked (HeadlessProject)  
+INFO  REPORT: Processing project file: /bambu_networking_dump.dll (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: DecompileExports.java  (HeadlessAnalyzer)  
+INFO  SCRIPT: /home/fboisselier/baltobu-reverse/ghidra/scripts/DecompileExports.java (HeadlessAnalyzer)  
+WARN  Decompiling 1801b5f70, pcode error at 1801b6165: Unable to resolve constructor at 1801b6165 (DecompileCallback)  
+WARN  Decompiling 1801b6d00, pcode error at 180dd9382: Could not follow disassembly flow into non-existing memory at 180dd9382 (DecompileCallback)  
+INFO  DecompileExports.java> [DecompileExports] processed 16/16 (latest: bambu_network_delete_setting, 417 bytes) (GhidraScript)  
+WARN  Decompiling 1801b8cc0, pcode error at 1801b8daf: Unable to resolve constructor at 1801b8daf (DecompileCallback)  
+INFO  DecompileExports.java> [DecompileExports] processed 32/32 (latest: bambu_network_get_mw_user_preference, 153 bytes) (GhidraScript)  
+INFO  DecompileExports.java> [DecompileExports] processed 48/48 (latest: bambu_network_get_user_name, 64 bytes) (GhidraScript)  
+INFO  DecompileExports.java> [DecompileExports] processed 64/64 (latest: bambu_network_query_bind_status, 322 bytes) (GhidraScript)  
+WARN  Decompiling 1801bb950, pcode error at 1801bba9e: Unable to resolve constructor at 1801bba9e (DecompileCallback)  
+INFO  DecompileExports.java> [DecompileExports] processed 80/80 (latest: bambu_network_set_on_printer_connected_fn, 153 bytes) (GhidraScript)  
+INFO  DecompileExports.java> [DecompileExports] processed 96/96 (latest: bambu_network_start_send_gcode_to_sdcard, 651 bytes) (GhidraScript)  
+WARN  Decompiling 1801bd6b0, pcode error at 1801bd77a: Unable to resolve constructor at 1801bd77a (DecompileCallback)  
+WARN  Decompiling 1801bd7a0, pcode error at 1801bda00: Unable to resolve constructor at 1801bda00 (DecompileCallback)  
+WARN  Decompiling 1801bdf20, pcode error at 1801be26e: Unable to resolve constructor at 1801be26e (DecompileCallback)  
+INFO  DecompileExports.java> [DecompileExports] processed 112/112 (latest: ft_job_get_msg, 196 bytes) (GhidraScript)  
+INFO  DecompileExports.java> [DecompileExports] processed 128/128 (latest: ft_tunnel_sync_connect, 62 bytes) (GhidraScript)  
+INFO  DecompileExports.java> [DecompileExports] 130 exports, 130 decompiled, 0 failed (GhidraScript)  
+INFO  DecompileExports.java> [DecompileExports] signatures: /home/fboisselier/baltobu-reverse/output/ghidra/exports_signatures.tsv (GhidraScript)  
+INFO  DecompileExports.java> [DecompileExports] bodies (gitignored): /home/fboisselier/baltobu-reverse/output/ghidra_decompile/exports (GhidraScript)  
+INFO  REPORT: Save succeeded for processed file: /bambu_networking_dump.dll (HeadlessAnalyzer)  
+[run_headless] done. Log: /home/fboisselier/baltobu-reverse/output/ghidra/ghidra_headless_baltobu-unpacked.log

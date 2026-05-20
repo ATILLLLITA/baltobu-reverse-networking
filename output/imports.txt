@@ -1,0 +1,75 @@
+# PE imports of bambu_networking.dll
+# DLLs: 24
+# Total symbols: 24
+
+[IPHLPAPI.DLL]  (1 symbol)
+  GetAdaptersAddresses
+
+[CRYPT32.dll]  (1 symbol)
+  CertOpenSystemStoreA
+
+[RPCRT4.dll]  (1 symbol)
+  UuidCreate
+
+[ADVAPI32.dll]  (1 symbol)
+  ReportEventW
+
+[bcrypt.dll]  (1 symbol)
+  BCryptGenRandom
+
+[WS2_32.dll]  (1 symbol)
+  ord 4
+
+[KERNEL32.dll]  (1 symbol)
+  GetStartupInfoW
+
+[USER32.dll]  (1 symbol)
+  GetProcessWindowStation
+
+[MSVCP140.dll]  (1 symbol)
+  ?_Getcat@?$codecvt@_WDU_Mbstatet@@@std@@SA_KPEAPEBVfacet@locale@2@PEBV42@@Z
+
+[WINTRUST.dll]  (1 symbol)
+  WTHelperGetProvCertFromChain
+
+[VCRUNTIME140.dll]  (1 symbol)
+  memcmp
+
+[VCRUNTIME140_1.dll]  (1 symbol)
+  __CxxFrameHandler4
+
+[api-ms-win-crt-time-l1-1-0.dll]  (1 symbol)
+  _localtime64_s
+
+[api-ms-win-crt-heap-l1-1-0.dll]  (1 symbol)
+  _callnewh
+
+[api-ms-win-crt-stdio-l1-1-0.dll]  (1 symbol)
+  __stdio_common_vswprintf_s
+
+[api-ms-win-crt-filesystem-l1-1-0.dll]  (1 symbol)
+  _rmdir
+
+[api-ms-win-crt-runtime-l1-1-0.dll]  (1 symbol)
+  _errno
+
+[api-ms-win-crt-math-l1-1-0.dll]  (1 symbol)
+  _fdclass
+
+[api-ms-win-crt-string-l1-1-0.dll]  (1 symbol)
+  strncpy_s
+
+[api-ms-win-crt-locale-l1-1-0.dll]  (1 symbol)
+  localeconv
+
+[api-ms-win-crt-convert-l1-1-0.dll]  (1 symbol)
+  strtol
+
+[api-ms-win-crt-utility-l1-1-0.dll]  (1 symbol)
+  srand
+
+[api-ms-win-crt-environment-l1-1-0.dll]  (1 symbol)
+  getenv
+
+[api-ms-win-crt-multibyte-l1-1-0.dll]  (1 symbol)
+  _mbspbrk

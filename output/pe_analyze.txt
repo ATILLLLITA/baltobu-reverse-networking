@@ -1,0 +1,35 @@
+File: bambu_networking.dll  (22,320,368 bytes)
+Machine: 0x8664  (0x8664 = x86-64)
+Sections: 9
+Timestamp: 1776410650  (2026-04-17T07:24:10Z)
+Characteristics: 0x2022
+Magic: 0x20b  (0x20b = PE32+)
+Image base: 0x180000000
+Entry point RVA: 0x1b72917  (VA 0x181b72917)
+Section alignment: 0x1000
+File alignment: 0x200
+Size of image: 0x2b4e000
+
+Data directories (non-empty):
+  Export         VA=0x02ab2c50  Size=0x140a
+  Import         VA=0x02aae228  Size=0x1f4
+  Resource       VA=0x02b4c000  Size=0x1d5
+  Exception      VA=0x02b03060  Size=0x485b8
+  Security       VA=0x01546200  Size=0x32f0
+  Reloc          VA=0x02b4d000  Size=0xc0
+  TLS            VA=0x01b9a3d0  Size=0x28
+  LoadConfig     VA=0x02b02f20  Size=0x138
+  IAT            VA=0x01605000  Size=0x188
+
+Name             VSize          VA       RSize      RawPtr  Chars
+.text           5e342b        1000           0           0  0x60000020 CODE|EXEC|READ
+.rdata          1a5f12      5e5000           0           0  0x40000040 IDATA|READ
+.data            9fb08      78b000           0           0  0xc0000040 IDATA|READ|WRITE
+.pdata           456cc      82b000           0           0  0x40000040 IDATA|READ
+.o1}            d93a9d      871000           0           0  0x60000020 CODE|EXEC|READ
+.2F;               1e8     1605000         200         400  0xc0000040 IDATA|READ|WRITE
+.1M@           1545618     1606000     1545800         600  0x68000060 CODE|IDATA|EXEC|READ
+.rsrc              1d5     2b4c000         200     1545e00  0x40000040 IDATA|READ
+.reloc              c0     2b4d000         200     1546000  0x42000040 IDATA|READ|DISCARD
+
+Entry-point section: .1M@

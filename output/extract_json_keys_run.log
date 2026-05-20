@@ -1,0 +1,84 @@
+[run_headless] reusing existing project baltobu-unpacked; running ExtractJsonKeys.java
+openjdk version "25.0.2" 2026-01-20
+OpenJDK Runtime Environment (build 25.0.2+10-Ubuntu-124.04)
+OpenJDK 64-Bit Server VM (build 25.0.2+10-Ubuntu-124.04, mixed mode)
+INFO  Using log config file: jar:file:/home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /home/fboisselier/baltobu-reverse/output/ghidra/ghidra_headless_baltobu-unpacked.log (LoggingInitialization)  
+INFO  Loading user preferences: /home/fboisselier/.config/ghidra/ghidra_12.0.4_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (1062 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (2415 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 58 extension points (18 false positives) (ClassSearcher)  
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldOffset has been called by org.apache.felix.framework.util.SecureAction (file:/home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/lib/org.apache.felix.framework-7.0.5.jar)
+WARNING: Please consider reporting this to the maintainers of class org.apache.felix.framework.util.SecureAction
+WARNING: sun.misc.Unsafe::staticFieldOffset will be removed in a future release
+INFO  HEADLESS Script Paths:
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/fboisselier/baltobu-reverse/ghidra/scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu-unpacked (HeadlessAnalyzer)  
+INFO  Opening project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu-unpacked (HeadlessProject)  
+INFO  REPORT: Processing project file: /bambu_networking_dump.dll (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: ExtractJsonKeys.java  (HeadlessAnalyzer)  
+INFO  SCRIPT: /home/fboisselier/baltobu-reverse/ghidra/scripts/ExtractJsonKeys.java (HeadlessAnalyzer)  
+INFO  ExtractJsonKeys.java> Functions calling json::operator[]: 99 (GhidraScript)  
+WARN  Decompiling 18012b280, pcode error at 18012b756: Unable to resolve constructor at 18012b756 (DecompileCallback)  
+WARN  Decompiling 18012c4e0, pcode error at 18012c98d: Unable to resolve constructor at 18012c98d (DecompileCallback)  
+WARN  Decompiling 1801320f0, pcode error at 1801322cf: Unable to resolve constructor at 1801322cf (DecompileCallback)  
+WARN  Decompiling 180136ad0, pcode error at 180136ca9: Unable to resolve constructor at 180136ca9 (DecompileCallback)  
+WARN  Decompiling 18014a260, pcode error at 18014a423: Unable to resolve constructor at 18014a423 (DecompileCallback)  
+INFO  ExtractJsonKeys.java> processed 32/99 (GhidraScript)  
+WARN  Decompiling 18015c970, pcode error at 18015ce53: Unable to resolve constructor at 18015ce53 (DecompileCallback)  
+WARN  Decompiling 180160020, pcode error at 18016065a: Unable to resolve constructor at 18016065a (DecompileCallback)  
+WARN  Decompiling 180177ee0, pcode error at 1801789e2: Unable to resolve constructor at 1801789e2 (DecompileCallback)  
+WARN  Decompiling 180178f90, pcode error at 1801792f9: Unable to resolve constructor at 1801792f9 (DecompileCallback)  
+WARN  Decompiling 18017cdf0, pcode error at 18017d010: Unable to resolve constructor at 18017d010 (DecompileCallback)  
+WARN  Decompiling 18017f730, pcode error at 18017fc74: Unable to resolve constructor at 18017fc74 (DecompileCallback)  
+WARN  Decompiling 18017fd00, pcode error at 180180181: Unable to resolve constructor at 180180181 (DecompileCallback)  
+WARN  Decompiling 180181f60, pcode error at 1801821f1: Unable to resolve constructor at 1801821f1 (DecompileCallback)  
+WARN  Decompiling 180181f60, pcode error at 18018228b: Unable to resolve constructor at 18018228b (DecompileCallback)  
+WARN  Decompiling 18018a4f0, pcode error at 18018ac61: Unable to resolve constructor at 18018ac61 (DecompileCallback)  
+WARN  Decompiling 18018f820, pcode error at 1801909ba: Unable to resolve constructor at 1801909ba (DecompileCallback)  
+INFO  ExtractJsonKeys.java> processed 64/99 (GhidraScript)  
+WARN  Decompiling 180192b90, pcode error at 1801934e6: Unable to resolve constructor at 1801934e6 (DecompileCallback)  
+WARN  Decompiling 180192b90, pcode error at 180193976: Unable to resolve constructor at 180193976 (DecompileCallback)  
+WARN  Decompiling 180192b90, pcode error at 180193e31: Unable to resolve constructor at 180193e31 (DecompileCallback)  
+WARN  Decompiling 18019f910, pcode error at 1801a058f: Unable to resolve constructor at 1801a058f (DecompileCallback)  
+WARN  Decompiling 1801a2070, pcode error at 1801a3e13: Unable to resolve constructor at 1801a3e13 (DecompileCallback)  
+WARN  Decompiling 1801c5600, pcode error at 1801c6023: Unable to resolve constructor at 1801c6023 (DecompileCallback)  
+WARN  Decompiling 1802151a0, pcode error at 180215428: Unable to resolve constructor at 180215428 (DecompileCallback)  
+WARN  Decompiling 180219d00, pcode error at 18021a2b5: Unable to resolve constructor at 18021a2b5 (DecompileCallback)  
+WARN  Decompiling 18024c510, pcode error at 18024c565: Unable to resolve constructor at 18024c565 (DecompileCallback)  
+WARN  Decompiling 18024cd40, pcode error at 18024d0ff: Unable to resolve constructor at 18024d0ff (DecompileCallback)  
+WARN  Decompiling 1802552f0, pcode error at 1802554f4: Unable to resolve constructor at 1802554f4 (DecompileCallback)  
+INFO  ExtractJsonKeys.java> processed 96/99 (GhidraScript)  
+INFO  ExtractJsonKeys.java> wrote /home/fboisselier/baltobu-reverse/output/unpacking/json_keys_per_function.tsv (99 functions) (GhidraScript)  
+INFO  REPORT: Save succeeded for processed file: /bambu_networking_dump.dll (HeadlessAnalyzer)  
+[run_headless] done. Log: /home/fboisselier/baltobu-reverse/output/ghidra/ghidra_headless_baltobu-unpacked.log

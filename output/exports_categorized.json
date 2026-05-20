@@ -1,0 +1,806 @@
+{
+  "bambu_network": {
+    "auth/session": [
+      {
+        "name": "bambu_network_bind",
+        "ordinal": 2,
+        "rva": 1793904,
+        "suffix": "bind"
+      },
+      {
+        "name": "bambu_network_bind_detect",
+        "ordinal": 3,
+        "rva": 1795120,
+        "suffix": "bind_detect"
+      },
+      {
+        "name": "bambu_network_build_login_cmd",
+        "ordinal": 4,
+        "rva": 1795616,
+        "suffix": "build_login_cmd"
+      },
+      {
+        "name": "bambu_network_build_login_info",
+        "ordinal": 5,
+        "rva": 1795680,
+        "suffix": "build_login_info"
+      },
+      {
+        "name": "bambu_network_build_logout_cmd",
+        "ordinal": 6,
+        "rva": 1795744,
+        "suffix": "build_logout_cmd"
+      },
+      {
+        "name": "bambu_network_change_user",
+        "ordinal": 7,
+        "rva": 1795808,
+        "suffix": "change_user"
+      },
+      {
+        "name": "bambu_network_check_user_report",
+        "ordinal": 9,
+        "rva": 1795904,
+        "suffix": "check_user_report"
+      },
+      {
+        "name": "bambu_network_check_user_task_report",
+        "ordinal": 10,
+        "rva": 1795952,
+        "suffix": "check_user_task_report"
+      },
+      {
+        "name": "bambu_network_get_design_staffpick",
+        "ordinal": 23,
+        "rva": 1804112,
+        "suffix": "get_design_staffpick"
+      },
+      {
+        "name": "bambu_network_get_mw_user_4ulist",
+        "ordinal": 31,
+        "rva": 1806304,
+        "suffix": "get_mw_user_4ulist"
+      },
+      {
+        "name": "bambu_network_get_mw_user_preference",
+        "ordinal": 32,
+        "rva": 1806496,
+        "suffix": "get_mw_user_preference"
+      },
+      {
+        "name": "bambu_network_get_my_token",
+        "ordinal": 35,
+        "rva": 1807104,
+        "suffix": "get_my_token"
+      },
+      {
+        "name": "bambu_network_get_user_avatar",
+        "ordinal": 45,
+        "rva": 1810704,
+        "suffix": "get_user_avatar"
+      },
+      {
+        "name": "bambu_network_get_user_id",
+        "ordinal": 46,
+        "rva": 1810768,
+        "suffix": "get_user_id"
+      },
+      {
+        "name": "bambu_network_get_user_info",
+        "ordinal": 47,
+        "rva": 1810832,
+        "suffix": "get_user_info"
+      },
+      {
+        "name": "bambu_network_get_user_name",
+        "ordinal": 48,
+        "rva": 1811088,
+        "suffix": "get_user_name"
+      },
+      {
+        "name": "bambu_network_get_user_nickanme",
+        "ordinal": 49,
+        "rva": 1811152,
+        "suffix": "get_user_nickanme"
+      },
+      {
+        "name": "bambu_network_get_user_presets",
+        "ordinal": 50,
+        "rva": 1811216,
+        "suffix": "get_user_presets"
+      },
+      {
+        "name": "bambu_network_get_user_print_info",
+        "ordinal": 51,
+        "rva": 1811264,
+        "suffix": "get_user_print_info"
+      },
+      {
+        "name": "bambu_network_get_user_selected_machine",
+        "ordinal": 52,
+        "rva": 1811552,
+        "suffix": "get_user_selected_machine"
+      },
+      {
+        "name": "bambu_network_get_user_tasks",
+        "ordinal": 53,
+        "rva": 1811616,
+        "suffix": "get_user_tasks"
+      },
+      {
+        "name": "bambu_network_is_user_login",
+        "ordinal": 58,
+        "rva": 1812240,
+        "suffix": "is_user_login"
+      },
+      {
+        "name": "bambu_network_ping_bind",
+        "ordinal": 60,
+        "rva": 1812912,
+        "suffix": "ping_bind"
+      },
+      {
+        "name": "bambu_network_query_bind_status",
+        "ordinal": 64,
+        "rva": 1815120,
+        "suffix": "query_bind_status"
+      },
+      {
+        "name": "bambu_network_request_bind_ticket",
+        "ordinal": 67,
+        "rva": 1815872,
+        "suffix": "request_bind_ticket"
+      },
+      {
+        "name": "bambu_network_set_on_user_login_fn",
+        "ordinal": 84,
+        "rva": 1819520,
+        "suffix": "set_on_user_login_fn"
+      },
+      {
+        "name": "bambu_network_set_on_user_message_fn",
+        "ordinal": 85,
+        "rva": 1819680,
+        "suffix": "set_on_user_message_fn"
+      },
+      {
+        "name": "bambu_network_set_user_selected_machine",
+        "ordinal": 88,
+        "rva": 1820416,
+        "suffix": "set_user_selected_machine"
+      },
+      {
+        "name": "bambu_network_unbind",
+        "ordinal": 105,
+        "rva": 1827440,
+        "suffix": "unbind"
+      },
+      {
+        "name": "bambu_network_user_logout",
+        "ordinal": 107,
+        "rva": 1828160,
+        "suffix": "user_logout"
+      }
+    ],
+    "callback": [
+      {
+        "name": "bambu_network_set_server_callback",
+        "ordinal": 87,
+        "rva": 1820000,
+        "suffix": "set_server_callback"
+      },
+      {
+        "name": "bambu_network_track_event",
+        "ordinal": 100,
+        "rva": 1824672,
+        "suffix": "track_event"
+      }
+    ],
+    "cloud/storage": [
+      {
+        "name": "bambu_network_get_my_profile",
+        "ordinal": 34,
+        "rva": 1806688,
+        "suffix": "get_my_profile"
+      },
+      {
+        "name": "bambu_network_set_cert_file",
+        "ordinal": 71,
+        "rva": 1817584,
+        "suffix": "set_cert_file"
+      },
+      {
+        "name": "bambu_network_track_remove_files",
+        "ordinal": 103,
+        "rva": 1826352,
+        "suffix": "track_remove_files"
+      }
+    ],
+    "config/state": [
+      {
+        "name": "bambu_network_delete_setting",
+        "ordinal": 16,
+        "rva": 1802736,
+        "suffix": "delete_setting"
+      },
+      {
+        "name": "bambu_network_get_oss_config",
+        "ordinal": 36,
+        "rva": 1807536,
+        "suffix": "get_oss_config"
+      },
+      {
+        "name": "bambu_network_get_setting_list",
+        "ordinal": 38,
+        "rva": 1808448,
+        "suffix": "get_setting_list"
+      },
+      {
+        "name": "bambu_network_get_setting_list2",
+        "ordinal": 39,
+        "rva": 1809216,
+        "suffix": "get_setting_list2"
+      },
+      {
+        "name": "bambu_network_put_setting",
+        "ordinal": 63,
+        "rva": 1814448,
+        "suffix": "put_setting"
+      },
+      {
+        "name": "bambu_network_set_config_dir",
+        "ordinal": 72,
+        "rva": 1817744,
+        "suffix": "set_config_dir"
+      },
+      {
+        "name": "bambu_network_track_enable",
+        "ordinal": 99,
+        "rva": 1824432,
+        "suffix": "track_enable"
+      }
+    ],
+    "device": [
+      {
+        "name": "bambu_network_connect_printer",
+        "ordinal": 11,
+        "rva": 1796000,
+        "suffix": "connect_printer"
+      },
+      {
+        "name": "bambu_network_disconnect_printer",
+        "ordinal": 18,
+        "rva": 1803248,
+        "suffix": "disconnect_printer"
+      },
+      {
+        "name": "bambu_network_enable_multi_machine",
+        "ordinal": 19,
+        "rva": 1803536,
+        "suffix": "enable_multi_machine"
+      },
+      {
+        "name": "bambu_network_get_printer_firmware",
+        "ordinal": 37,
+        "rva": 1808000,
+        "suffix": "get_printer_firmware"
+      },
+      {
+        "name": "bambu_network_install_device_cert",
+        "ordinal": 56,
+        "rva": 1812064,
+        "suffix": "install_device_cert"
+      },
+      {
+        "name": "bambu_network_modify_printer_name",
+        "ordinal": 59,
+        "rva": 1812272,
+        "suffix": "modify_printer_name"
+      },
+      {
+        "name": "bambu_network_send_message_to_printer",
+        "ordinal": 70,
+        "rva": 1816912,
+        "suffix": "send_message_to_printer"
+      },
+      {
+        "name": "bambu_network_set_on_printer_connected_fn",
+        "ordinal": 80,
+        "rva": 1818880,
+        "suffix": "set_on_printer_connected_fn"
+      }
+    ],
+    "lifecycle": [
+      {
+        "name": "bambu_network_create_agent",
+        "ordinal": 13,
+        "rva": 1797376,
+        "suffix": "create_agent"
+      },
+      {
+        "name": "bambu_network_destroy_agent",
+        "ordinal": 17,
+        "rva": 1803168,
+        "suffix": "destroy_agent"
+      },
+      {
+        "name": "bambu_network_init_log",
+        "ordinal": 55,
+        "rva": 1812016,
+        "suffix": "init_log"
+      },
+      {
+        "name": "bambu_network_start",
+        "ordinal": 89,
+        "rva": 1820496,
+        "suffix": "start"
+      },
+      {
+        "name": "bambu_network_start_discovery",
+        "ordinal": 90,
+        "rva": 1820544,
+        "suffix": "start_discovery"
+      }
+    ],
+    "logging/debug": [
+      {
+        "name": "bambu_network_check_debug_consistent",
+        "ordinal": 8,
+        "rva": 1795888,
+        "suffix": "check_debug_consistent"
+      },
+      {
+        "name": "bambu_network_report_consent",
+        "ordinal": 66,
+        "rva": 1815504,
+        "suffix": "report_consent"
+      }
+    ],
+    "misc": [
+      {
+        "name": "bambu_network_connect_server",
+        "ordinal": 12,
+        "rva": 1797088,
+        "suffix": "connect_server"
+      },
+      {
+        "name": "bambu_network_del_rating_picture_oss",
+        "ordinal": 14,
+        "rva": 1802384,
+        "suffix": "del_rating_picture_oss"
+      },
+      {
+        "name": "bambu_network_put_rating_picture_oss",
+        "ordinal": 62,
+        "rva": 1813952,
+        "suffix": "put_rating_picture_oss"
+      },
+      {
+        "name": "bambu_network_refresh_connection",
+        "ordinal": 65,
+        "rva": 1815456,
+        "suffix": "refresh_connection"
+      },
+      {
+        "name": "bambu_network_track_header",
+        "ordinal": 102,
+        "rva": 1825920,
+        "suffix": "track_header"
+      },
+      {
+        "name": "bambu_network_track_update_property",
+        "ordinal": 104,
+        "rva": 1826592,
+        "suffix": "track_update_property"
+      },
+      {
+        "name": "bambu_network_update_cert",
+        "ordinal": 106,
+        "rva": 1827872,
+        "suffix": "update_cert"
+      }
+    ],
+    "network/io": [
+      {
+        "name": "bambu_network_add_subscribe",
+        "ordinal": 1,
+        "rva": 1793824,
+        "suffix": "add_subscribe"
+      },
+      {
+        "name": "bambu_network_del_subscribe",
+        "ordinal": 15,
+        "rva": 1802656,
+        "suffix": "del_subscribe"
+      },
+      {
+        "name": "bambu_network_get_camera_url",
+        "ordinal": 21,
+        "rva": 1803632,
+        "suffix": "get_camera_url"
+      },
+      {
+        "name": "bambu_network_get_camera_url_for_golive",
+        "ordinal": 22,
+        "rva": 1803856,
+        "suffix": "get_camera_url_for_golive"
+      },
+      {
+        "name": "bambu_network_get_my_message",
+        "ordinal": 33,
+        "rva": 1806656,
+        "suffix": "get_my_message"
+      },
+      {
+        "name": "bambu_network_get_studio_info_url",
+        "ordinal": 41,
+        "rva": 1810224,
+        "suffix": "get_studio_info_url"
+      },
+      {
+        "name": "bambu_network_request_setting_id",
+        "ordinal": 68,
+        "rva": 1816128,
+        "suffix": "request_setting_id"
+      },
+      {
+        "name": "bambu_network_send_message",
+        "ordinal": 69,
+        "rva": 1816272,
+        "suffix": "send_message"
+      },
+      {
+        "name": "bambu_network_set_extra_http_header",
+        "ordinal": 74,
+        "rva": 1817904,
+        "suffix": "set_extra_http_header"
+      },
+      {
+        "name": "bambu_network_set_on_http_error_fn",
+        "ordinal": 76,
+        "rva": 1818240,
+        "suffix": "set_on_http_error_fn"
+      },
+      {
+        "name": "bambu_network_set_on_local_message_fn",
+        "ordinal": 78,
+        "rva": 1818560,
+        "suffix": "set_on_local_message_fn"
+      },
+      {
+        "name": "bambu_network_set_on_message_fn",
+        "ordinal": 79,
+        "rva": 1818720,
+        "suffix": "set_on_message_fn"
+      },
+      {
+        "name": "bambu_network_set_on_ssdp_msg_fn",
+        "ordinal": 82,
+        "rva": 1819200,
+        "suffix": "set_on_ssdp_msg_fn"
+      },
+      {
+        "name": "bambu_network_set_on_subscribe_failure_fn",
+        "ordinal": 83,
+        "rva": 1819360,
+        "suffix": "set_on_subscribe_failure_fn"
+      },
+      {
+        "name": "bambu_network_start_publish",
+        "ordinal": 94,
+        "rva": 1822608,
+        "suffix": "start_publish"
+      },
+      {
+        "name": "bambu_network_start_subscribe",
+        "ordinal": 97,
+        "rva": 1824272,
+        "suffix": "start_subscribe"
+      },
+      {
+        "name": "bambu_network_stop_subscribe",
+        "ordinal": 98,
+        "rva": 1824352,
+        "suffix": "stop_subscribe"
+      }
+    ],
+    "print/job": [
+      {
+        "name": "bambu_network_get_model_instance_id",
+        "ordinal": 25,
+        "rva": 1804512,
+        "suffix": "get_model_instance_id"
+      },
+      {
+        "name": "bambu_network_get_model_mall_detail_url",
+        "ordinal": 26,
+        "rva": 1804784,
+        "suffix": "get_model_mall_detail_url"
+      },
+      {
+        "name": "bambu_network_get_model_mall_home_url",
+        "ordinal": 27,
+        "rva": 1805248,
+        "suffix": "get_model_mall_home_url"
+      },
+      {
+        "name": "bambu_network_get_model_mall_rating",
+        "ordinal": 28,
+        "rva": 1805504,
+        "suffix": "get_model_mall_rating"
+      },
+      {
+        "name": "bambu_network_get_model_publish_url",
+        "ordinal": 29,
+        "rva": 1805776,
+        "suffix": "get_model_publish_url"
+      },
+      {
+        "name": "bambu_network_get_model_rating_id",
+        "ordinal": 30,
+        "rva": 1806032,
+        "suffix": "get_model_rating_id"
+      },
+      {
+        "name": "bambu_network_get_slice_info",
+        "ordinal": 40,
+        "rva": 1810064,
+        "suffix": "get_slice_info"
+      },
+      {
+        "name": "bambu_network_get_subtask",
+        "ordinal": 42,
+        "rva": 1810288,
+        "suffix": "get_subtask"
+      },
+      {
+        "name": "bambu_network_get_subtask_info",
+        "ordinal": 43,
+        "rva": 1810464,
+        "suffix": "get_subtask_info"
+      },
+      {
+        "name": "bambu_network_get_task_plate_index",
+        "ordinal": 44,
+        "rva": 1810592,
+        "suffix": "get_task_plate_index"
+      },
+      {
+        "name": "bambu_network_put_model_mall_rating",
+        "ordinal": 61,
+        "rva": 1813344,
+        "suffix": "put_model_mall_rating"
+      },
+      {
+        "name": "bambu_network_start_local_print",
+        "ordinal": 91,
+        "rva": 1820576,
+        "suffix": "start_local_print"
+      },
+      {
+        "name": "bambu_network_start_local_print_with_record",
+        "ordinal": 92,
+        "rva": 1821184,
+        "suffix": "start_local_print_with_record"
+      },
+      {
+        "name": "bambu_network_start_print",
+        "ordinal": 93,
+        "rva": 1821904,
+        "suffix": "start_print"
+      },
+      {
+        "name": "bambu_network_start_sdcard_print",
+        "ordinal": 95,
+        "rva": 1823024,
+        "suffix": "start_sdcard_print"
+      },
+      {
+        "name": "bambu_network_start_send_gcode_to_sdcard",
+        "ordinal": 96,
+        "rva": 1823616,
+        "suffix": "start_send_gcode_to_sdcard"
+      }
+    ],
+    "query/getter": [
+      {
+        "name": "bambu_network_get_bambulab_host",
+        "ordinal": 20,
+        "rva": 1803568,
+        "suffix": "get_bambulab_host"
+      },
+      {
+        "name": "bambu_network_get_hms_snapshot",
+        "ordinal": 24,
+        "rva": 1804304,
+        "suffix": "get_hms_snapshot"
+      },
+      {
+        "name": "bambu_network_get_version",
+        "ordinal": 54,
+        "rva": 1811952,
+        "suffix": "get_version"
+      },
+      {
+        "name": "bambu_network_is_server_connected",
+        "ordinal": 57,
+        "rva": 1812208,
+        "suffix": "is_server_connected"
+      },
+      {
+        "name": "bambu_network_set_get_country_code_fn",
+        "ordinal": 75,
+        "rva": 1818080,
+        "suffix": "set_get_country_code_fn"
+      },
+      {
+        "name": "bambu_network_track_get_property",
+        "ordinal": 101,
+        "rva": 1825296,
+        "suffix": "track_get_property"
+      }
+    ],
+    "setter": [
+      {
+        "name": "bambu_network_set_country_code",
+        "ordinal": 73,
+        "rva": 1817824,
+        "suffix": "set_country_code"
+      },
+      {
+        "name": "bambu_network_set_on_local_connect_fn",
+        "ordinal": 77,
+        "rva": 1818400,
+        "suffix": "set_on_local_connect_fn"
+      },
+      {
+        "name": "bambu_network_set_on_server_connected_fn",
+        "ordinal": 81,
+        "rva": 1819040,
+        "suffix": "set_on_server_connected_fn"
+      },
+      {
+        "name": "bambu_network_set_queue_on_main_fn",
+        "ordinal": 86,
+        "rva": 1819840,
+        "suffix": "set_queue_on_main_fn"
+      }
+    ]
+  },
+  "ft": {
+    "lifecycle": [
+      {
+        "name": "ft_free",
+        "ordinal": 109,
+        "rva": 2396864,
+        "suffix": "free"
+      }
+    ],
+    "misc": [
+      {
+        "name": "ft_abi_version",
+        "ordinal": 108,
+        "rva": 2396848,
+        "suffix": "abi_version"
+      }
+    ],
+    "print/job": [
+      {
+        "name": "ft_job_cancel",
+        "ordinal": 110,
+        "rva": 2396880,
+        "suffix": "job_cancel"
+      },
+      {
+        "name": "ft_job_create",
+        "ordinal": 111,
+        "rva": 2397168,
+        "suffix": "job_create"
+      },
+      {
+        "name": "ft_job_get_msg",
+        "ordinal": 112,
+        "rva": 2398304,
+        "suffix": "job_get_msg"
+      },
+      {
+        "name": "ft_job_get_result",
+        "ordinal": 113,
+        "rva": 2398512,
+        "suffix": "job_get_result"
+      },
+      {
+        "name": "ft_job_msg_destroy",
+        "ordinal": 114,
+        "rva": 2399104,
+        "suffix": "job_msg_destroy"
+      },
+      {
+        "name": "ft_job_release",
+        "ordinal": 115,
+        "rva": 2399152,
+        "suffix": "job_release"
+      },
+      {
+        "name": "ft_job_result_destroy",
+        "ordinal": 116,
+        "rva": 2399344,
+        "suffix": "job_result_destroy"
+      },
+      {
+        "name": "ft_job_retain",
+        "ordinal": 117,
+        "rva": 2399408,
+        "suffix": "job_retain"
+      },
+      {
+        "name": "ft_job_set_msg_cb",
+        "ordinal": 118,
+        "rva": 2399424,
+        "suffix": "job_set_msg_cb"
+      },
+      {
+        "name": "ft_job_set_result_cb",
+        "ordinal": 119,
+        "rva": 2399472,
+        "suffix": "job_set_result_cb"
+      },
+      {
+        "name": "ft_job_try_get_msg",
+        "ordinal": 120,
+        "rva": 2399520,
+        "suffix": "job_try_get_msg"
+      },
+      {
+        "name": "ft_tunnel_start_job",
+        "ordinal": 127,
+        "rva": 2401664,
+        "suffix": "tunnel_start_job"
+      }
+    ],
+    "transport/tcp": [
+      {
+        "name": "ft_tunnel_create",
+        "ordinal": 121,
+        "rva": 2399680,
+        "suffix": "tunnel_create"
+      },
+      {
+        "name": "ft_tunnel_release",
+        "ordinal": 122,
+        "rva": 2400576,
+        "suffix": "tunnel_release"
+      },
+      {
+        "name": "ft_tunnel_retain",
+        "ordinal": 123,
+        "rva": 2400816,
+        "suffix": "tunnel_retain"
+      },
+      {
+        "name": "ft_tunnel_set_status_cb",
+        "ordinal": 124,
+        "rva": 2400832,
+        "suffix": "tunnel_set_status_cb"
+      },
+      {
+        "name": "ft_tunnel_shutdown",
+        "ordinal": 125,
+        "rva": 2401264,
+        "suffix": "tunnel_shutdown"
+      },
+      {
+        "name": "ft_tunnel_start_connect",
+        "ordinal": 126,
+        "rva": 2401280,
+        "suffix": "tunnel_start_connect"
+      },
+      {
+        "name": "ft_tunnel_sync_connect",
+        "ordinal": 128,
+        "rva": 2403200,
+        "suffix": "tunnel_sync_connect"
+      }
+    ]
+  }
+}

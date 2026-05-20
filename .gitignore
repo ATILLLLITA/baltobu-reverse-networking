@@ -1,0 +1,35 @@
+# Ghidra project storage and locks - reproducible from the DLL + scripts
+ghidra/projects/
+*.gpr
+*.rep/
+*.lock
+*.lock~
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Bambu Lab's proprietary binary. Vendored locally for analysis but NOT
+# redistributed. The committed SHA-256 (output/dll.sha256) records its
+# provenance without shipping the binary itself.
+unpacking/bambu_networking.dll
+unpacking/*.dll
+
+# Memory dumps and dynamic-analysis output, large and not for redistribution.
+# The accompanying SHA-256 file is committed so the dump's provenance is
+# traceable without redistributing the dump itself.
+unpacking/dumps/*.dll
+output/captures/
+
+# Decompiled C sources - by policy NOT committed to keep the clean-room
+# implementation team unable to read derivative code. Documentation
+# describing the ABI is fine; raw decompiler output is not.
+output/ghidra_decompile/
+
+# Editor scratch
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

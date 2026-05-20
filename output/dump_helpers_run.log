@@ -1,0 +1,105 @@
+[run_headless] reusing existing project baltobu-unpacked; running DumpHelperBodies.java
+openjdk version "25.0.2" 2026-01-20
+OpenJDK Runtime Environment (build 25.0.2+10-Ubuntu-124.04)
+OpenJDK 64-Bit Server VM (build 25.0.2+10-Ubuntu-124.04, mixed mode)
+INFO  Using log config file: jar:file:/home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /home/fboisselier/baltobu-reverse/output/ghidra/ghidra_headless_baltobu-unpacked.log (LoggingInitialization)  
+INFO  Loading user preferences: /home/fboisselier/.config/ghidra/ghidra_12.0.4_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (1072 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (2367 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 58 extension points (18 false positives) (ClassSearcher)  
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldOffset has been called by org.apache.felix.framework.util.SecureAction (file:/home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/lib/org.apache.felix.framework-7.0.5.jar)
+WARNING: Please consider reporting this to the maintainers of class org.apache.felix.framework.util.SecureAction
+WARNING: sun.misc.Unsafe::staticFieldOffset will be removed in a future release
+INFO  HEADLESS Script Paths:
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/fboisselier/baltobu-reverse/ghidra/scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu-unpacked (HeadlessAnalyzer)  
+INFO  Opening project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu-unpacked (HeadlessProject)  
+INFO  REPORT: Processing project file: /bambu_networking_dump.dll (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: DumpHelperBodies.java  (HeadlessAnalyzer)  
+INFO  SCRIPT: /home/fboisselier/baltobu-reverse/ghidra/scripts/DumpHelperBodies.java (HeadlessAnalyzer)  
+INFO  DumpHelperBodies.java> Decompiling 184 helpers... (GhidraScript)  
+WARN  Decompiling 180124f30, pcode error at 180124f8f: Unable to resolve constructor at 180124f8f (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 18019df21: Unable to resolve constructor at 18019df21 (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 1810c183d: Could not follow disassembly flow into non-existing memory at 1810c183d (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 18119a15d: Could not follow disassembly flow into non-existing memory at 18119a15d (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 1810f3979: Could not follow disassembly flow into non-existing memory at 1810f3979 (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 18147155c: Could not follow disassembly flow into non-existing memory at 18147155c (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 181004dde: Could not follow disassembly flow into non-existing memory at 181004dde (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 1810c25a1: Could not follow disassembly flow into non-existing memory at 1810c25a1 (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 181083dd5: Could not follow disassembly flow into non-existing memory at 181083dd5 (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 18136c60c: Could not follow disassembly flow into non-existing memory at 18136c60c (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 1811b59bc: Could not follow disassembly flow into non-existing memory at 1811b59bc (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 1814e5acb: Could not follow disassembly flow into non-existing memory at 1814e5acb (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 1814cd665: Could not follow disassembly flow into non-existing memory at 1814cd665 (DecompileCallback)  
+WARN  Decompiling 18019dc7c, pcode error at 18104480a: Could not follow disassembly flow into non-existing memory at 18104480a (DecompileCallback)  
+INFO  DumpHelperBodies.java> decompiled 32/184 (GhidraScript)  
+WARN  Decompiling 1801a7460, pcode error at 1801a74e7: Unable to resolve constructor at 1801a74e7 (DecompileCallback)  
+INFO  DumpHelperBodies.java> decompiled 64/184 (GhidraScript)  
+WARN  Decompiling 1801a8300, pcode error at 1801a837b: Unable to resolve constructor at 1801a837b (DecompileCallback)  
+WARN  Decompiling 1801a8a60, pcode error at 1801a8b98: Unable to resolve constructor at 1801a8b98 (DecompileCallback)  
+INFO  DumpHelperBodies.java> decompiled 96/184 (GhidraScript)  
+WARN  Decompiling 1801a9ba0, pcode error at 1801a9e29: Unable to resolve constructor at 1801a9e29 (DecompileCallback)  
+WARN  Decompiling 1801a9ba0, pcode error at 1801a9e1b: Unable to resolve constructor at 1801a9e1b (DecompileCallback)  
+WARN  Decompiling 1801a9e40, pcode error at 1801a9f70: Unable to resolve constructor at 1801a9f70 (DecompileCallback)  
+WARN  Decompiling 1801a9f80, pcode error at 1800f3d87: Unable to resolve constructor at 1800f3d87 (DecompileCallback)  
+WARN  Decompiling 1801a9f80, pcode error at 1800f3ffb: Unable to resolve constructor at 1800f3ffb (DecompileCallback)  
+WARN  Decompiling 1801a9f80, pcode error at 1800f4029: Unable to resolve constructor at 1800f4029 (DecompileCallback)  
+WARN  Decompiling 1801aac70, pcode error at 1801aad98: Unable to resolve constructor at 1801aad98 (DecompileCallback)  
+WARN  Decompiling 1801aae80, pcode error at 1801ab021: Unable to resolve constructor at 1801ab021 (DecompileCallback)  
+WARN  Decompiling 1801aae80, pcode error at 1801ab019: Unable to resolve constructor at 1801ab019 (DecompileCallback)  
+INFO  DumpHelperBodies.java> decompiled 128/184 (GhidraScript)  
+WARN  Decompiling 1801ade60, pcode error at 1801adf63: Unable to resolve constructor at 1801adf63 (DecompileCallback)  
+WARN  Decompiling 1801aecf0, pcode error at 1801aedf3: Unable to resolve constructor at 1801aedf3 (DecompileCallback)  
+WARN  Decompiling 1801af010, pcode error at 1801af1df: Unable to resolve constructor at 1801af1df (DecompileCallback)  
+WARN  Decompiling 1801af010, pcode error at 1801af1de: Unable to resolve constructor at 1801af1de (DecompileCallback)  
+WARN  Decompiling 1801af970, pcode error at 1801afaa4: Unable to resolve constructor at 1801afaa4 (DecompileCallback)  
+WARN  Decompiling 1802270b8, pcode error at 1812e8048: Could not follow disassembly flow into non-existing memory at 1812e8048 (DecompileCallback)  
+WARN  Decompiling 180234fb6, pcode error at 181114a5f: Could not follow disassembly flow into non-existing memory at 181114a5f (DecompileCallback)  
+WARN  Decompiling 180234fb6, pcode error at 18107a27d: Could not follow disassembly flow into non-existing memory at 18107a27d (DecompileCallback)  
+WARN  Decompiling 180234fb6, pcode error at 1815cfadd: Could not follow disassembly flow into non-existing memory at 1815cfadd (DecompileCallback)  
+WARN  Decompiling 180234fb6, pcode error at 181102d95: Could not follow disassembly flow into non-existing memory at 181102d95 (DecompileCallback)  
+WARN  Decompiling 180234fb6, pcode error at 18143046d: Could not follow disassembly flow into non-existing memory at 18143046d (DecompileCallback)  
+WARN  Decompiling 180237754, pcode error at 18145d36c: Could not follow disassembly flow into non-existing memory at 18145d36c (DecompileCallback)  
+WARN  Decompiling 18023dee0, pcode error at 18023e174: Unable to resolve constructor at 18023e174 (DecompileCallback)  
+INFO  DumpHelperBodies.java> decompiled 160/184 (GhidraScript)  
+WARN  Decompiling 180565ed6, pcode error at 180565f0b: Unable to resolve constructor at 180565f0b (DecompileCallback)  
+WARN  Decompiling 180565edc, pcode error at 180565f0b: Unable to resolve constructor at 180565f0b (DecompileCallback)  
+WARN  Decompiling 180565ee2, pcode error at 180565f0b: Unable to resolve constructor at 180565f0b (DecompileCallback)  
+WARN  Decompiling 180565ee8, pcode error at 180565f0b: Unable to resolve constructor at 180565f0b (DecompileCallback)  
+WARN  Decompiling 180565efa, pcode error at 180565f0b: Unable to resolve constructor at 180565f0b (DecompileCallback)  
+WARN  Decompiling 180566250, pcode error at 180566267: Unable to resolve constructor at 180566267 (DecompileCallback)  
+WARN  Decompiling 180566477, pcode error at 180566488: Unable to resolve constructor at 180566488 (DecompileCallback)  
+INFO  DumpHelperBodies.java> done. (GhidraScript)  
+INFO  REPORT: Save succeeded for processed file: /bambu_networking_dump.dll (HeadlessAnalyzer)  
+[run_headless] done. Log: /home/fboisselier/baltobu-reverse/output/ghidra/ghidra_headless_baltobu-unpacked.log

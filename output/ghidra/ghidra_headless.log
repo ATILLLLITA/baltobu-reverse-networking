@@ -1,0 +1,495 @@
+2026-05-19 11:41:47 INFO  (LoggingInitialization) Using log config file: jar:file:/home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-05-19 11:41:47 INFO  (LoggingInitialization) Using log file: /home/fboisselier/baltobu-reverse/output/ghidra/ghidra_headless.log  
+2026-05-19 11:41:47 INFO  (Preferences) Loading user preferences: /home/fboisselier/.config/ghidra/ghidra_12.0.4_PUBLIC/preferences  
+2026-05-19 11:41:47 INFO  (ClassSearcher) Searching for classes...  
+2026-05-19 11:41:49 INFO  (ClassSearcher) Class search complete (1239 ms)  
+2026-05-19 11:41:49 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-05-19 11:41:49 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-05-19 11:41:49 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-05-19 11:41:49 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-05-19 11:41:49 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/fboisselier-ghidra/fscache2  
+2026-05-19 11:41:49 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2026-05-19 11:41:50 INFO  (AnalyzeHeadless) Headless startup complete (3679 ms)  
+2026-05-19 11:41:50 INFO  (ClassSearcher) Class searcher loaded 89 extension points (43 false positives)  
+2026-05-19 11:41:50 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/fboisselier/baltobu-reverse/ghidra/scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts  
+2026-05-19 11:41:50 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-05-19 11:41:50 INFO  (HeadlessAnalyzer) Creating project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu  
+2026-05-19 11:41:50 INFO  (DefaultProject) Creating project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu  
+2026-05-19 11:41:50 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2026-05-19 11:41:50 INFO  (HeadlessAnalyzer)      project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu  
+2026-05-19 11:41:50 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/fboisselier/baltobu-reverse/bambu_networking.dll  
+2026-05-19 11:41:52 DEBUG (SleighLanguage) Sleigh compile: -DBaseDir=/home/fboisselier/ghidra_12.0.4_PUBLIC/ -i /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/x86/data/sleighArgs.txt /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/x86/data/languages/x86-64.slaspec /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/x86/data/languages/x86-64.sla   
+2026-05-19 11:41:55 WARN  (SleighCompile) 390 NOP constructors found  
+2026-05-19 11:41:55 WARN  (SleighCompile) Use -n switch to list each individually  
+2026-05-19 11:41:55 WARN  (SleighCompile) ia.sinc:1027: Table 'pcRelSimm32' exports size 0  
+2026-05-19 11:41:55 WARN  (SleighCompile) 449 unnecessary extensions/truncations were converted to copies  
+2026-05-19 11:41:55 WARN  (SleighCompile) Use -u switch to list each individually  
+2026-05-19 11:41:55 WARN  (SleighCompile) 16 operations wrote to temporaries that were not read  
+2026-05-19 11:41:55 WARN  (SleighCompile) Use -t switch to list each individually  
+2026-05-19 11:41:55 WARN  (SleighCompile) ia.sinc:932: Unreferenced table: 'imm32_64'  
+2026-05-19 11:41:57 INFO  (ProgramLoader) Using Loader: Portable Executable (PE)  
+2026-05-19 11:41:57 INFO  (ProgramLoader) Using Language/Compiler: x86:LE:64:default:windows  
+2026-05-19 11:41:57 INFO  (ProgramLoader) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2026-05-19 11:41:57 INFO  (TLSDirectory) TLS callbacks at 181b9a3f8  
+2026-05-19 11:42:01 INFO  (ProgramLoader) Additional info:
+Loading file:///home/fboisselier/baltobu-reverse/bambu_networking.dll?MD5=b42f3f2f427ea6bc8f322afdfeafa066...
+Failed to read ControlFlowGuard dispatch function pointer address at 1805e6200
+------------------------------------------------
+
+Searching 8 paths for library ADVAPI32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-CONVERT-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-ENVIRONMENT-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-HEAP-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-LOCALE-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-MATH-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-MULTIBYTE-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-STDIO-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-STRING-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-TIME-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-UTILITY-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library BCRYPT.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library CRYPT32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library IPHLPAPI.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library KERNEL32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library MSVCP140.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library RPCRT4.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library USER32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library VCRUNTIME140.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library VCRUNTIME140_1.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library WINTRUST.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library WS2_32.DLL...
+Library not found.
+------------------------------------------------
+
+Linking the External Programs of 'bambu_networking.dll' to imported libraries...
+  [IPHLPAPI.DLL] -> not found in project
+  [CRYPT32.DLL] -> not found in project
+  [RPCRT4.DLL] -> not found in project
+  [ADVAPI32.DLL] -> not found in project
+  [BCRYPT.DLL] -> not found in project
+  [WS2_32.DLL] -> not found in project
+  [KERNEL32.DLL] -> not found in project
+  [USER32.DLL] -> not found in project
+  [MSVCP140.DLL] -> not found in project
+  [WINTRUST.DLL] -> not found in project
+  [VCRUNTIME140.DLL] -> not found in project
+  [VCRUNTIME140_1.DLL] -> not found in project
+  [API-MS-WIN-CRT-TIME-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-HEAP-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-STDIO-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-MATH-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-STRING-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-LOCALE-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-CONVERT-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-UTILITY-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-ENVIRONMENT-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-MULTIBYTE-L1-1-0.DLL] -> not found in project
+------------------------------------------------
+
+  
+2026-05-19 11:42:01 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2026-05-19 11:42:01 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/fboisselier/baltobu-reverse/bambu_networking.dll  
+2026-05-19 11:42:01 WARN  (NoReturnFunctionAnalyzer) Ignoring leading '_' chars on no-return name '___raise_securityfailure' specified in file: /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/data/PEFunctionsThatDoNotReturn  
+2026-05-19 11:42:01 WARN  (NoReturnFunctionAnalyzer) Ignoring leading '_' chars on no-return name '___report_rangecheckfailure' specified in file: /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/data/PEFunctionsThatDoNotReturn  
+2026-05-19 11:42:02 INFO  (PdbUniversalAnalyzer) Skipping PDB processing: missing PDB information in program metadata  
+2026-05-19 11:42:03 DEBUG (CreateThunkFunctionCmd) Created new external location for address 1ad280eaa: <EXTERNAL>::EXT_FUN_1ad280eaa  
+2026-05-19 11:42:04 WARN  (DecompileCallback) Decompiling 18163ec4b, pcode error at 1816290ef: Unable to resolve constructor at 1816290ef  
+2026-05-19 11:42:06 WARN  (DecompileCallback) Decompiling 181637630, pcode error at 00000032: Could not follow disassembly flow into non-existing memory at 00000032  
+2026-05-19 11:42:08 WARN  (DecompileCallback) Decompiling 181637630, pcode error at 00000032: Could not follow disassembly flow into non-existing memory at 00000032  
+2026-05-19 11:42:08 WARN  (DecompileCallback) Decompiling 181637630, pcode error at 00000032: Could not follow disassembly flow into non-existing memory at 00000032  
+2026-05-19 11:42:10 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/fboisselier-ghidra/packed-db-cache  
+2026-05-19 11:42:10 DEBUG (PackedDatabaseCache) Caching packed database: /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/data/typeinfo/win32/windows_vs12_64.gdt  
+2026-05-19 11:42:10 DEBUG (PackedDatabase) Unpacking database /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/data/typeinfo/win32/windows_vs12_64.gdt -> /var/tmp/fboisselier-ghidra/packed-db-cache/pdbC82BA65B/db.1.gbf  
+2026-05-19 11:42:11 DEBUG (PackedDatabaseCache) Cache update completed: /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/data/typeinfo/win32/windows_vs12_64.gdt  
+2026-05-19 11:42:12 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: windows_vs12_64  
+2026-05-19 11:42:21 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              1.976 secs
+    Apply Data Archives                        1.103 secs
+    Call Convention ID                         0.301 secs
+    Call-Fixup Installer                       0.105 secs
+    Create Address Tables                      2.628 secs
+    Create Address Tables - One Time           0.001 secs
+    Create Function                            0.021 secs
+    Data Reference                             1.708 secs
+    Decompiler Switch Analysis                 3.933 secs
+    Demangler Microsoft                        0.137 secs
+    Disassemble Entry Points                   1.299 secs
+    Embedded Media                             0.187 secs
+    External Entry References                  0.001 secs
+    Function ID                                0.414 secs
+    Function Start Search                      0.172 secs
+    Non-Returning Functions - Discovered       0.052 secs
+    Non-Returning Functions - Known            0.093 secs
+    PDB Universal                              0.006 secs
+    Reference                                  0.004 secs
+    Scalar Operand References                  0.038 secs
+    Shared Return Calls                        0.561 secs
+    Stack                                      3.898 secs
+    Subroutine References                      0.009 secs
+    Windows x86 PE Exception Handling          0.014 secs
+    Windows x86 PE RTTI Analyzer               0.008 secs
+    Windows x86 Thread Environment Block (TEB) Analyzer     0.027 secs
+    WindowsResourceReference                   0.529 secs
+    x86 Constant Reference Analyzer            0.325 secs
+-----------------------------------------------------
+     Total Time   19 secs
+-----------------------------------------------------
+  
+2026-05-19 11:42:21 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/fboisselier/baltobu-reverse/bambu_networking.dll  
+2026-05-19 11:42:21 INFO  (HeadlessAnalyzer) REPORT: Execute script: InitialAnalysis.java   
+2026-05-19 11:42:23 INFO  (HeadlessAnalyzer) SCRIPT: /home/fboisselier/baltobu-reverse/ghidra/scripts/InitialAnalysis.java  
+2026-05-19 11:42:23 INFO  (GhidraScript) InitialAnalysis.java> [InitialAnalysis] program: bambu_networking.dll  
+2026-05-19 11:42:23 INFO  (GhidraScript) InitialAnalysis.java> [InitialAnalysis] image base: 0x180000000  
+2026-05-19 11:42:23 INFO  (GhidraScript) InitialAnalysis.java> [InitialAnalysis] functions found: 24710  
+2026-05-19 11:42:23 INFO  (GhidraScript) InitialAnalysis.java> [InitialAnalysis] wrote /home/fboisselier/baltobu-reverse/output/ghidra  
+2026-05-19 11:42:23 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/fboisselier/baltobu-reverse/bambu_networking.dll  
+2026-05-19 11:42:23 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/fboisselier/baltobu-reverse/bambu_networking.dll  
+2026-05-19 11:42:24 INFO  (LocalFileSystem) /bambu_networking.dll: file created (fboisselier)  
+2026-05-19 11:42:24 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /bambu_networking.dll (baltobu:/bambu_networking.dll)  
+2026-05-19 11:42:24 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  
+2026-05-19 11:44:58 INFO  (LoggingInitialization) Using log config file: jar:file:/home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-05-19 11:44:58 INFO  (LoggingInitialization) Using log file: /home/fboisselier/baltobu-reverse/output/ghidra/ghidra_headless.log  
+2026-05-19 11:44:58 INFO  (Preferences) Loading user preferences: /home/fboisselier/.config/ghidra/ghidra_12.0.4_PUBLIC/preferences  
+2026-05-19 11:44:58 INFO  (ClassSearcher) Searching for classes...  
+2026-05-19 11:44:59 INFO  (ClassSearcher) Class search complete (1078 ms)  
+2026-05-19 11:44:59 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-05-19 11:44:59 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-05-19 11:44:59 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-05-19 11:44:59 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-05-19 11:45:00 INFO  (AnalyzeHeadless) Headless startup complete (2443 ms)  
+2026-05-19 11:45:00 INFO  (ClassSearcher) Class searcher loaded 89 extension points (43 false positives)  
+2026-05-19 11:45:00 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/fboisselier/baltobu-reverse/ghidra/scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts  
+2026-05-19 11:45:00 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-05-19 11:45:00 INFO  (HeadlessAnalyzer) Opening existing project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu  
+2026-05-19 11:45:00 INFO  (HeadlessProject) Opening project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu  
+2026-05-19 11:45:00 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2026-05-19 11:45:00 INFO  (HeadlessAnalyzer)      project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu  
+2026-05-19 11:45:00 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/fboisselier/baltobu-reverse/bambu_networking.dll  
+2026-05-19 11:45:02 INFO  (ProgramLoader) Using Loader: Portable Executable (PE)  
+2026-05-19 11:45:02 INFO  (ProgramLoader) Using Language/Compiler: x86:LE:64:default:windows  
+2026-05-19 11:45:02 INFO  (ProgramLoader) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2026-05-19 11:45:02 INFO  (TLSDirectory) TLS callbacks at 181b9a3f8  
+2026-05-19 11:45:05 INFO  (ProgramLoader) Additional info:
+Loading file:///home/fboisselier/baltobu-reverse/bambu_networking.dll?MD5=b42f3f2f427ea6bc8f322afdfeafa066...
+Failed to read ControlFlowGuard dispatch function pointer address at 1805e6200
+------------------------------------------------
+
+Searching 8 paths for library ADVAPI32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-CONVERT-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-ENVIRONMENT-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-HEAP-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-LOCALE-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-MATH-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-MULTIBYTE-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-STDIO-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-STRING-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-TIME-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-UTILITY-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library BCRYPT.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library CRYPT32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library IPHLPAPI.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library KERNEL32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library MSVCP140.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library RPCRT4.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library USER32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library VCRUNTIME140.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library VCRUNTIME140_1.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library WINTRUST.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library WS2_32.DLL...
+Library not found.
+------------------------------------------------
+
+Linking the External Programs of 'bambu_networking.dll' to imported libraries...
+  [IPHLPAPI.DLL] -> not found in project
+  [CRYPT32.DLL] -> not found in project
+  [RPCRT4.DLL] -> not found in project
+  [ADVAPI32.DLL] -> not found in project
+  [BCRYPT.DLL] -> not found in project
+  [WS2_32.DLL] -> not found in project
+  [KERNEL32.DLL] -> not found in project
+  [USER32.DLL] -> not found in project
+  [MSVCP140.DLL] -> not found in project
+  [WINTRUST.DLL] -> not found in project
+  [VCRUNTIME140.DLL] -> not found in project
+  [VCRUNTIME140_1.DLL] -> not found in project
+  [API-MS-WIN-CRT-TIME-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-HEAP-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-STDIO-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-MATH-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-STRING-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-LOCALE-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-CONVERT-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-UTILITY-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-ENVIRONMENT-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-MULTIBYTE-L1-1-0.DLL] -> not found in project
+------------------------------------------------
+
+  
+2026-05-19 11:45:05 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2026-05-19 11:45:05 ERROR (HeadlessAnalyzer) REPORT: Found conflicting program file in project: /bambu_networking.dll  
+2026-05-19 11:45:05 ERROR (HeadlessAnalyzer) REPORT: Import failed for file: file:///home/fboisselier/baltobu-reverse/bambu_networking.dll  
+2026-05-19 11:45:28 INFO  (LoggingInitialization) Using log config file: jar:file:/home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-05-19 11:45:28 INFO  (LoggingInitialization) Using log file: /home/fboisselier/baltobu-reverse/output/ghidra/ghidra_headless.log  
+2026-05-19 11:45:28 INFO  (Preferences) Loading user preferences: /home/fboisselier/.config/ghidra/ghidra_12.0.4_PUBLIC/preferences  
+2026-05-19 11:45:28 INFO  (ClassSearcher) Searching for classes...  
+2026-05-19 11:45:29 INFO  (ClassSearcher) Class search complete (1154 ms)  
+2026-05-19 11:45:29 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-05-19 11:45:29 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-05-19 11:45:29 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-05-19 11:45:29 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-05-19 11:45:30 INFO  (AnalyzeHeadless) Headless startup complete (2541 ms)  
+2026-05-19 11:45:30 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2026-05-19 11:45:30 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/fboisselier/baltobu-reverse/ghidra/scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/fboisselier/ghidra_12.0.4_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts  
+2026-05-19 11:45:30 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-05-19 11:45:30 INFO  (HeadlessAnalyzer) Opening existing project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu  
+2026-05-19 11:45:30 INFO  (HeadlessProject) Opening project: /home/fboisselier/baltobu-reverse/ghidra/projects/baltobu  
+2026-05-19 11:45:32 INFO  (HeadlessAnalyzer) REPORT: Processing project file: /bambu_networking.dll  
+2026-05-19 11:45:33 INFO  (HeadlessAnalyzer) REPORT: Execute script: ProtectorAnalysis.java   
+2026-05-19 11:45:34 INFO  (HeadlessAnalyzer) SCRIPT: /home/fboisselier/baltobu-reverse/ghidra/scripts/ProtectorAnalysis.java  
+2026-05-19 11:45:34 INFO  (GhidraScript) ProtectorAnalysis.java> [ProtectorAnalysis] writing to /home/fboisselier/baltobu-reverse/output/ghidra/protector  
+2026-05-19 11:45:35 INFO  (GhidraScript) ProtectorAnalysis.java> [ProtectorAnalysis] 42 real functions in .1M@  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181637630, pcode error at 00000032: Could not follow disassembly flow into non-existing memory at 00000032  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 18163ec4b, pcode error at 1816290ef: Unable to resolve constructor at 1816290ef  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b22e2d, pcode error at 1ad280eaa: Could not follow disassembly flow into non-existing memory at 1ad280eaa  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b22e34, pcode error at 1ad280eaa: Could not follow disassembly flow into non-existing memory at 1ad280eaa  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b22e4c, pcode error at 1ad280eaa: Could not follow disassembly flow into non-existing memory at 1ad280eaa  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b230ec, pcode error at 181b230f5: Unable to resolve constructor at 181b230f5  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b230f6, pcode error at 181b23146: Unable to resolve constructor at 181b23146  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b23149, pcode error at 181b23169: Unable to resolve constructor at 181b23169  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b3b3da, pcode error at 181b3b40e: Unable to resolve constructor at 181b3b40e  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b3b3da, pcode error at 181b3b47c: Unable to resolve constructor at 181b3b47c  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b3b3da, pcode error at 181b3b45d: Unable to resolve constructor at 181b3b45d  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b3b3da, pcode error at 181b3b481: Unable to resolve constructor at 181b3b481  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b3b3da, pcode error at 181ba5ffd: Unable to resolve constructor at 181ba5ffd  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b3b3da, pcode error at 181ba603c: Unable to resolve constructor at 181ba603c  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b50507, pcode error at 181b50513: Unable to resolve constructor at 181b50513  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b5afac, pcode error at 181b5afc6: Unable to resolve constructor at 181b5afc6  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b63831, pcode error at 181b63883: Unable to resolve constructor at 181b63883  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b72917, pcode error at 181b7296f: Unable to resolve constructor at 181b7296f  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b7b471, pcode error at 10bce514f: Could not follow disassembly flow into non-existing memory at 10bce514f  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b7b493, pcode error at 10bce514f: Could not follow disassembly flow into non-existing memory at 10bce514f  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181b811b5, pcode error at 181b811e3: Unable to resolve constructor at 181b811e3  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181bb832b, pcode error at b728c33e: Could not follow disassembly flow into non-existing memory at b728c33e  
+2026-05-19 11:45:36 WARN  (DecompileCallback) Decompiling 181ff7615, pcode error at 181ff7648: Unable to resolve constructor at 181ff7648  
+2026-05-19 11:45:37 WARN  (DecompileCallback) Decompiling 182a74b93, pcode error at 182a74be4: Unable to resolve constructor at 182a74be4  
+2026-05-19 11:45:37 WARN  (DecompileCallback) Decompiling 182ac02ff, pcode error at 182ac0344: Unable to resolve constructor at 182ac0344  
+2026-05-19 11:45:37 INFO  (GhidraScript) ProtectorAnalysis.java> [ProtectorAnalysis] decompiled OK=42 FAIL=0  
+2026-05-19 11:45:37 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for processed file: /bambu_networking.dll  

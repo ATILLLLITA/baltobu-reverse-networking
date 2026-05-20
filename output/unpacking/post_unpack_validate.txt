@@ -1,0 +1,15 @@
+== Validating unpacking/dumps/bambu_networking_dump.dll ==
+  [OK] section .text has on-disk bytes  (rsize=0x5e3600, vsize=0x5e4000)
+  [OK] section .rdata has on-disk bytes  (rsize=0x1a6000, vsize=0x1a6000)
+  [OK] section .data has on-disk bytes  (rsize=0x9f800, vsize=0xa0000)
+  [OK] section .pdata has on-disk bytes  (rsize=0x45800, vsize=0x46000)
+  [WARN] image base matches original  (orig=0x180000000 dump=0x7ffe22c50000 — expected when dumped from a running ASLR process)
+  [OK] all 128 original exports still present
+  [OK] every export RVA lands in a populated section
+  [WARN] IAT directory grew after Scylla rebuild  (orig=0x188 dump=0x0 — expected with VMProtect import-protection)
+
+Notes:
+  - Header image base is the ASLR-relocated runtime base, not the original 0x180000000. Ghidra import: set the base explicitly to 0x180000000 so RVAs match the docs.
+  - IAT was not rebuilt — VMProtect's import-protection wiped the original thunks. Recover import semantics via Frida hook log or by reversing the VMP API-id resolver, not from the dump's IAT.
+
+== ALL CHECKS PASSED ==

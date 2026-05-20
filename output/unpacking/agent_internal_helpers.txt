@@ -1,0 +1,127 @@
+# Map of internal agent helpers to the exports that call them
+
+Built from `output/ghidra/exports_signatures.tsv`. When an export
+self-checks `g_agent` then calls `FUN_180...`, that helper is the
+real implementation method on the agent. Naming them is a follow-
+up step for clean-room implementers — the export name implies the
+helper's role.
+
+| Internal helper VA | Called by export(s) |
+|---|---|
+| `FUN_18019dc7c` | `ft_job_create` |
+| `FUN_1801a6ae0` | `destroy_agent` |
+| `FUN_1801a6cc0` | `add_subscribe` |
+| `FUN_1801a6d20` | `build_login_cmd` |
+| `FUN_1801a6d40` | `build_login_info` |
+| `FUN_1801a7090` | `build_logout_cmd` |
+| `FUN_1801a70b0` | `change_user` |
+| `FUN_1801a7160` | `refresh_connection` |
+| `FUN_1801a7170` | `check_user_report` |
+| `FUN_1801a7180` | `check_user_task_report` |
+| `FUN_1801a7190` | `connect_printer` |
+| `FUN_1801a73e0` | `connect_server` |
+| `FUN_1801a73f0` | `del_rating_picture_oss` |
+| `FUN_1801a7400` | `del_subscribe` |
+| `FUN_1801a7460` | `delete_setting` |
+| `FUN_1801a7510` | `disconnect_printer` |
+| `FUN_1801a7520` | `enable_multi_machine` |
+| `FUN_1801a7530` | `get_bambulab_host` |
+| `FUN_1801a7550` | `get_camera_url` |
+| `FUN_1801a7640` | `get_camera_url_for_golive` |
+| `FUN_1801a77a0` | `get_design_staffpick` |
+| `FUN_1801a7830` | `get_hms_snapshot` |
+| `FUN_1801a78c0` | `get_model_instance_id`, `get_model_rating_id` |
+| `FUN_1801a78d0` | `get_model_mall_detail_url` |
+| `FUN_1801a7980` | `get_model_mall_home_url` |
+| `FUN_1801a7990` | `get_model_mall_rating` |
+| `FUN_1801a79a0` | `get_model_publish_url` |
+| `FUN_1801a79c0` | `get_mw_user_4ulist` |
+| `FUN_1801a7a50` | `get_mw_user_preference` |
+| `FUN_1801a7ad0` | `get_my_message` |
+| `FUN_1801a7ae0` | `get_my_profile` |
+| `FUN_1801a7ba0` | `get_my_token` |
+| `FUN_1801a7c60` | `get_oss_config` |
+| `FUN_1801a7d30` | `get_printer_firmware` |
+| `FUN_1801a7df0` | `get_setting_list`, `get_setting_list2` |
+| `FUN_1801a7fa0` | `get_slice_info` |
+| `FUN_1801a80e0` | `get_studio_info_url` |
+| `FUN_1801a8100` | `get_subtask` |
+| `FUN_1801a8190` | `get_subtask_info` |
+| `FUN_1801a8250` | `get_task_plate_index` |
+| `FUN_1801a8300` | `get_user_info` |
+| `FUN_1801a83a0` | `get_user_presets` |
+| `FUN_1801a84c0` | `get_user_print_info` |
+| `FUN_1801a84d0` | `get_user_tasks` |
+| `FUN_1801a8590` | `init_log` |
+| `FUN_1801a85a0` | `install_device_cert` |
+| `FUN_1801a8650` | `is_server_connected` |
+| `FUN_1801a8660` | `is_user_login` |
+| `FUN_1801a8670` | `start` |
+| `FUN_1801a8690` | `modify_printer_name` |
+| `FUN_1801a8840` | `put_model_mall_rating` |
+| `FUN_1801a8970` | `put_rating_picture_oss` |
+| `FUN_1801a8a60` | `put_setting` |
+| `FUN_1801a8bb0` | `query_bind_status` |
+| `FUN_1801a8c10` | `request_bind_ticket` |
+| `FUN_1801a8cb0` | `request_setting_id` |
+| `FUN_1801a8e30` | `send_message` |
+| `FUN_1801a8f70` | `send_message_to_printer` |
+| `FUN_1801a90b0` | `set_cert_file` |
+| `FUN_1801a91e0` | `set_config_dir` |
+| `FUN_1801a9300` | `set_country_code` |
+| `FUN_1801a93b0` | `set_extra_http_header` |
+| `FUN_1801a9440` | `set_get_country_code_fn` |
+| `FUN_1801a94c0` | `set_on_http_error_fn` |
+| `FUN_1801a9540` | `set_on_local_connect_fn` |
+| `FUN_1801a95c0` | `set_on_local_message_fn` |
+| `FUN_1801a9640` | `set_on_message_fn` |
+| `FUN_1801a96c0` | `set_on_printer_connected_fn` |
+| `FUN_1801a9740` | `set_on_server_connected_fn` |
+| `FUN_1801a97c0` | `set_on_ssdp_msg_fn` |
+| `FUN_1801a9870` | `set_on_subscribe_failure_fn` |
+| `FUN_1801a98f0` | `set_on_user_login_fn` |
+| `FUN_1801a9970` | `set_on_user_message_fn` |
+| `FUN_1801a99f0` | `set_queue_on_main_fn` |
+| `FUN_1801a9a70` | `set_server_callback` |
+| `FUN_1801a9af0` | `set_user_selected_machine` |
+| `FUN_1801a9ba0` | `bind` |
+| `FUN_1801a9e40` | `bind_detect` |
+| `FUN_1801a9f80` | `start_discovery` |
+| `FUN_1801a9fa0` | `start_local_print` |
+| `FUN_1801aa0d0` | `start_local_print_with_record` |
+| `FUN_1801aa250` | `ping_bind` |
+| `FUN_1801aa300` | `start_print` |
+| `FUN_1801aa480` | `start_publish` |
+| `FUN_1801aa600` | `report_consent` |
+| `FUN_1801aa6b0` | `start_sdcard_print` |
+| `FUN_1801aa7e0` | `start_send_gcode_to_sdcard` |
+| `FUN_1801aa910` | `start_subscribe` |
+| `FUN_1801aa9c0` | `unbind` |
+| `FUN_1801aaa70` | `stop_subscribe` |
+| `FUN_1801aab20` | `track_enable` |
+| `FUN_1801aab40` | `track_event` |
+| `FUN_1801aac70` | `track_get_property` |
+| `FUN_1801aadb0` | `track_header` |
+| `FUN_1801aae60` | `track_remove_files` |
+| `FUN_1801aae80` | `track_update_property` |
+| `FUN_1801ab030` | `update_cert` |
+| `FUN_1801ab040` | `get_user_avatar` |
+| `FUN_1801ab090` | `get_user_id` |
+| `FUN_1801ab0e0` | `user_logout` |
+| `FUN_1801ab0f0` | `get_user_name` |
+| `FUN_1801ab140` | `get_user_nickanme` |
+| `FUN_1801ab190` | `get_user_selected_machine` |
+| `FUN_1801ad500` | `bind` |
+| `FUN_1801ad820` | `unbind` |
+| `FUN_1801adb40` | `ping_bind` |
+| `FUN_1801ade60` | `bind_detect`, `put_setting`, `start_print`, `track_event`, `update_cert` |
+| `FUN_1801ae180` | `get_my_token`, `send_message`, `track_enable`, `track_header` |
+| `FUN_1801ae6b0` | `get_user_info` |
+| `FUN_1801ae9d0` | `connect_server`, `delete_setting`, `get_my_profile`, `get_oss_config`, `get_user_tasks`, `report_consent` |
+| `FUN_1801aecf0` | `connect_printer` |
+| `FUN_1801af010` | `get_setting_list` |
+| `FUN_1801af330` | `get_setting_list2`, `query_bind_status`, `start_local_print` |
+| `FUN_1801af650` | `disconnect_printer`, `start_sdcard_print`, `track_get_property`, `track_remove_files` |
+| `FUN_1801af970` | `get_model_rating_id`, `get_user_print_info`, `modify_printer_name`, `request_bind_ticket`, `set_server_callback` |
+| `FUN_1801afc90` | `get_printer_firmware` |
+| `FUN_1801affb0` | `get_model_instance_id`, `get_model_mall_rating`, `get_model_publish_url`, `put_model_mall_rating`, `track_update_property` |

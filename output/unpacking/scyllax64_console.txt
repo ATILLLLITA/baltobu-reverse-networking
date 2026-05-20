@@ -1,0 +1,38 @@
+﻿Analyzing C:\baltobu\host_loader.exe
+Module parsing: C:\Windows\System32\ntdll.dll
+Module parsing: C:\Windows\System32\kernel32.dll
+Module parsing: C:\Windows\System32\KernelBase.dll
+Module parsing: C:\Windows\System32\apphelp.dll
+Module parsing: C:\Windows\System32\ucrtbase.dll
+Module parsing: C:\baltobu\bambu_networking.dll
+Module parsing: C:\Windows\System32\IPHLPAPI.DLL
+Module parsing: C:\Windows\System32\crypt32.dll
+Module parsing: C:\Windows\System32\rpcrt4.dll
+Module parsing: C:\Windows\System32\advapi32.dll
+Module parsing: C:\Windows\System32\msvcrt.dll
+Module parsing: C:\Windows\System32\sechost.dll
+Module parsing: C:\Windows\System32\ws2_32.dll
+Module parsing: C:\Windows\System32\user32.dll
+Module parsing: C:\Windows\System32\bcrypt.dll
+Module parsing: C:\Windows\System32\win32u.dll
+Module parsing: C:\Windows\System32\gdi32.dll
+Module parsing: C:\Windows\System32\gdi32full.dll
+Module parsing: C:\Windows\System32\msvcp_win.dll
+Module parsing: C:\Windows\System32\wintrust.dll
+Module parsing: C:\Windows\System32\msvcp140.dll
+Module parsing: C:\Windows\System32\vcruntime140.dll
+Module parsing: C:\Windows\System32\vcruntime140_1.dll
+Module parsing: C:\Windows\System32\imm32.dll
+Module parsing: C:\Windows\System32\msasn1.dll
+Loading modules done.
+Imagebase: 00007FF637160000 Size: 00013000
+->>> Module bambu_networking.dll selected.
+Imagebase: 00007FFE22C50000 Size: 02B4E000 EntryPoint: 01B72917
+IAT Search Adv: Found 1 (0x1) possible IAT entries.
+IAT Search Adv: Possible IAT first 00007FFE24BFF43C last 00007FFE24BFF43C entry.
+IAT Search Adv: IAT VA 00007FFE24BFF43C RVA 0000000001FAF43C Size 0x0008 (8)
+IAT Search Nor: IAT not found at OEP 00007FFE247C2917!
+IAT parsing finished, found 0 valid APIs, missed 0 APIs
+DIRECT IMPORTS - Found 0 possible direct imports with 0 unique APIs!
+Dump success C:\baltobu\bambu_networking_dump.dll
+Nothing to rebuild

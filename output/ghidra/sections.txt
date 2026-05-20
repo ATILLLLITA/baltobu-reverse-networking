@@ -1,0 +1,13 @@
+# Section -> function inventory (Ghidra view)
+# block_name  start            size       num_funcs  bytes_in_funcs
+Headers     0x0000000180000000  0x400              0             0
+.text       0x0000000180001000  0x5e342b       23697         23697
+.rdata      0x00000001805e5000  0x1a5f12           1             1
+.data       0x000000018078b000  0x9fb08            0             0
+.pdata      0x000000018082b000  0x456cc            0             0
+.o1}        0x0000000180871000  0xd93a9d         968           968
+.2F;        0x0000000181605000  0x200              0             0
+.1M@        0x0000000181606000  0x1545800         44         16422
+.rsrc       0x0000000182b4c000  0x200              0             0
+.reloc      0x0000000182b4d000  0x200              0             0
+tdb         0x000000ff00000000  0x1850             0             0
