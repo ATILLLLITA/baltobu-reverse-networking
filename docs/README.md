@@ -102,3 +102,8 @@ against this repo's `05`/`06`.
 ### Companion analysis, wave 6 (24)
 
 24. [`24-studio-source-confirmation.md`](24-studio-source-confirmation.md) — cross-check against the open-source (AGPL) BambuStudio SDK headers (`bambu_networking.hpp`, `FileTransferUtils.hpp`): confirms the reversed `PrintParams` (44 fields) and `ft_*` ABI byte-for-byte; resolves the framer (JSON control + opaque `bin` side-channel, no CBOR/msgpack); decodes error -3030 = cloud OSS 3MF-upload failure (curl-60 = environmental cert-verify).
+
+### Companion analysis, wave 7 (25–26)
+
+25. [`25-camera-local-protocol.md`](25-camera-local-protocol.md) — the LOCAL camera is fully reimplementable: TCP-6000 MJPEG (80-byte `bblp`+access-code auth, 16-byte frame header) and RTSPS-H.264 (P1S/X1) — no vendor keys. Remote (TUTK Kalay / Agora) is cloud-minted and vendor-locked (Kalay license is the hard blocker; Agora is token-gated).
+26. [`26-ref-clusterm-impl.md`](26-ref-clusterm-impl.md) — cross-reference to ClusterM/open-bamboo-networking (working AGPL clean-room): it closes the local camera (both transports) and MQTT credentials (cloud password = access_token; `u_<uid>` / `bblp`); it leaves open the MQTT-command RSA-SHA256 signing (bypassed via Developer Mode, else 84033543), the farm secret, remote camera, and the cloud FT tunnel.
