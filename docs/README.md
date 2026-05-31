@@ -82,3 +82,9 @@ against this repo's `05`/`06`.
 14. [`14-device-report-fields.md`](14-device-report-fields.md) — the SDK does **not** parse `push_status` (forwarded opaquely to the slicer); documents what the SDK *does* read/write: device cache, print/upload command keys, config/login-report keys, with 01.07→02.06 deltas.
 15. [`15-oss-upload-sigv4.md`](15-oss-upload-sigv4.md) — OSS/S3 STS credential schema, full AWS-SigV4 + Aliyun-OSS-v1 signing details, upload flow, and the `my/task` / design-publish camelCase payloads.
 16. [`16-mqtt-channels-framing.md`](16-mqtt-channels-framing.md) — cloud vs local MQTT channels (both TLS:8883, client-id/username/cert-policy differences), report stream = plain JSON, the JsonOrJsonBinFramer cloud-tunnel framing (wire format flagged as open).
+
+### Companion analysis, wave 3 (17–19)
+
+17. [`17-ssdp-discovery.md`](17-ssdp-discovery.md) — LAN discovery: `BBL::SsdpDiscovery` on lssdp, `urn:bambulab-com:device:3dprinter:1`, the `Dev*.bambu.com` header set (01.07→02.06 deltas).
+18. [`18-device-cert-security.md`](18-device-cert-security.md) — printer auth: `app_cert_install`/`enc_msg` device-cert handshake, custom pinned X509 chain verify, the `aes256`-wrapped cert fetch, `sec_link`.
+19. [`19-http-client.md`](19-http-client.md) — `BBL::Http` libcurl wrapper, `X-BBL-*` header suite, the refresh-on-401 token-retry loop, pinned TLS + `CURLOPT_RESOLVE` region routing.
