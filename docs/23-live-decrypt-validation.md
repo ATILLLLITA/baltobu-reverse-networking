@@ -53,13 +53,24 @@ only the changed keys with `"msg":1` (e.g. just `wifi_signal`+`sequence_id`); th
 omits `msg` (or `msg:0`). `net.info[].ip` is a little-endian int-encoded IPv4. `tutk_server:enable`
 corroborates the camera/TUTK stack (`09-camera-tutk-brtc`).
 
-## Cloud channel (TLS 1.3) — framer still open
+## Cloud channel (TLS 1.3) — and why it's idle
 
-The cloud broker negotiated **TLS 1.3** (`0x1301`). Recovering the `JsonOrJsonBinFramer`
-CBOR/MessagePack discriminator would require extracting the TLS 1.3 **traffic secrets** from the
-slicer's OpenSSL memory (no clean `session_id` anchor for those) and a *triggered* RPC/job
-message (the framer is for the cloud job tunnel, not the plain-JSON report relay). Left open —
-high effort, low value.
+The cloud broker negotiated **TLS 1.3** (`0x1301`). Two independent obstacles to reading the
+`JsonOrJsonBinFramer` wire format from a normal capture:
+
+1. **The cloud channel carries no application data while the printer is LAN-reachable.**
+   `DeviceSubscribeManager` prefers the local channel; with the printer on the LAN, *all*
+   `push_status` flows over local TLS 1.2 (decrypted above) and the cloud MQTT session holds only
+   keepalives — **0 app-data records** captured. So even decrypting TLS 1.3 yields nothing here.
+2. **Downgrade is blocked.** `OPENSSL_CONF` with `MaxProtocol=TLSv1.2` is **ignored** by the
+   slicer's statically-linked OpenSSL (it still offered TLS 1.3); a MITM downgrade is impossible
+   because the client pins the Bambu cert chain.
+
+To exercise the cloud framer one must **force cloud-only** (block the printer's LAN IP so the
+local channel fails over to cloud) **and trigger a cloud job/RPC** (e.g. a cloud print or file
+transfer — the binary framer is the cloud job tunnel, not the plain-JSON report relay), then
+extract the TLS 1.3 traffic secrets from a fresh process dump. High effort for the
+CBOR-vs-MessagePack discriminator byte; pursued separately.
 
 > Captured/decrypted on the operator's own machine and printer for interoperability. No account
 > tokens, keys, serial-bound secrets, or the master secret value are published here.
