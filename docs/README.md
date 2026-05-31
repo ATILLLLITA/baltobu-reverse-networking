@@ -75,3 +75,10 @@ against this repo's `05`/`06`.
 12. [`12-login-json.md`](12-login-json.md) — login payload schemas: `studio_userlogin`
     (`{command,sequence_id,data:{name,avatar}}`), printer-login (`login/command/wifi/tutk`),
     HTTP sign-in/ticket-token flow, cloud host matrix.
+
+### Companion analysis, wave 2 (13–16)
+
+13. [`13-error-codes.md`](13-error-codes.md) — library internal return codes (0/-1/-2/-4/-6/-17/-18/-26…) and the Bambu `enc_msg` application codes (`0x05022647–4C`, `84033545` = need-reset-device-pub-key); plus the HTTP/Paho/X509 pass-through code spaces.
+14. [`14-device-report-fields.md`](14-device-report-fields.md) — the SDK does **not** parse `push_status` (forwarded opaquely to the slicer); documents what the SDK *does* read/write: device cache, print/upload command keys, config/login-report keys, with 01.07→02.06 deltas.
+15. [`15-oss-upload-sigv4.md`](15-oss-upload-sigv4.md) — OSS/S3 STS credential schema, full AWS-SigV4 + Aliyun-OSS-v1 signing details, upload flow, and the `my/task` / design-publish camelCase payloads.
+16. [`16-mqtt-channels-framing.md`](16-mqtt-channels-framing.md) — cloud vs local MQTT channels (both TLS:8883, client-id/username/cert-policy differences), report stream = plain JSON, the JsonOrJsonBinFramer cloud-tunnel framing (wire format flagged as open).
