@@ -94,3 +94,7 @@ against this repo's `05`/`06`.
 20. [`20-pushstatus-schema.md`](20-pushstatus-schema.md) — the FULL printer `push_status` JSON schema (the SDK forwards it opaquely; schema lives in the open-source AGPL slicer `DeviceManager.cpp`): all categories, `gcode_state` enum, HMS error bit-decode.
 21. [`21-small-subsystems.md`](21-small-subsystems.md) — SFTP/FTPS (`BBL::Sftp`, `bblp`+access-code), telemetry (`track_*`→TrackingManager), DeviceSubscribeManager (local/cloud arbiter), the bind/login state machine.
 22. [`22-overview.md`](22-overview.md) — index + architecture summary of the whole 08–22 companion series; notes the cloud broker is TLS 1.3 (framer wire-format left open).
+
+### Companion analysis, wave 5 (23)
+
+23. [`23-live-decrypt-validation.md`](23-live-decrypt-validation.md) — live capture decrypted: OpenSSL TLS 1.2 master-secret extraction via the `session_id` anchor; confirms the local report channel is plain JSON (no binary framing) and validates the `push_status` schema against real on-wire data; cloud channel is TLS 1.3 (framer left open).
