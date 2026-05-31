@@ -57,3 +57,21 @@ family.
 - The Ghidra headless scripts are under [`../ghidra/scripts/`](../ghidra/scripts/).
 - The repository's top-level [`../README.md`](../README.md) covers
   layout, provenance, and reproduction.
+
+## Companion analysis (Linux-Rosetta + live-DLL, 08–12)
+
+Independent cross-source findings (symbol-bearing Linux `01.07.01.04` build + a
+`ReadProcessMemory` dump of the live `02.06.00.50` DLL). Complementary to 01–07; cross-verified
+against this repo's `05`/`06`.
+
+8.  [`08-linux-rosetta.md`](08-linux-rosetta.md) — `create_agent` body recovered, 79 exact
+    demangled C++ ABI signatures, cloud host matrix, cross-verification of 05/06.
+9.  [`09-camera-tutk-brtc.md`](09-camera-tutk-brtc.md) — camera/liveview: ThroughTek Kalay
+    (TUTK) + Agora (`BRTC`) media plane, `ttcode` flow, URL-scheme transport selector, H.264.
+10. [`10-ft-abi.md`](10-ft-abi.md) — full C ABI signatures of the 21 `ft_*` exports
+    (handle/refcount model, callback types) — complements the `cmd_type`/structs in 05/06.
+11. [`11-print-params.md`](11-print-params.md) — `BBL::PrintParams`/`PublishParams` field
+    layout, dual snake/camel serialization, version deltas (ams_mapping2, plate_md5…).
+12. [`12-login-json.md`](12-login-json.md) — login payload schemas: `studio_userlogin`
+    (`{command,sequence_id,data:{name,avatar}}`), printer-login (`login/command/wifi/tutk`),
+    HTTP sign-in/ticket-token flow, cloud host matrix.
