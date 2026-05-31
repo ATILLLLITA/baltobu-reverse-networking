@@ -291,3 +291,38 @@ How to reproduce (no vendor binaries shared)
 No secrets, tokens, certs, or keys included; cloud endpoints are URL templates only.
 
 ---
+
+## 5. Cloud host matrix (concrete hostnames, from .rodata)
+
+Maps the abstract `base_domain`/`apix`/`iot`/`emqx`/`login`/`tutk` config fields (see
+`05-wire-protocol.md` / `06-internals.md`) to the real hostnames found in `.rodata`:
+
+| Env | API | MQTT broker | Portal |
+|-----|-----|-------------|--------|
+| **Production** | `api.bambulab.com` | `us.mqtt.bambulab.com` (US) / `cn.mqtt.bambulab.com` (CN) | — |
+| dev | `api-dev.bambu-lab.com` | `dev.mqtt.bambu-lab.com` | `portal-dev.bambu-lab.com` |
+| qa | `api-qa.bambu-lab.com` | `qa.mqtt.bambu-lab.com` | `portal-qa.bambu-lab.com` |
+| pre | `api-pre.bambu-lab.com` | `pre.mqtt.bambu-lab.com` | `portal-pre.bambu-lab.com` |
+| pre-us | `api-pre-us.bambu-lab.com` | `pre-us.mqtt.bambu-lab.com` | `portal-pre-us.bambu-lab.com` |
+
+Production uses the `bambulab.com` apex; all non-prod uses `bambu-lab.com` (hyphen). Region
+(US vs CN) is country-code driven via `BBL::AccountManager::load_servers_from_region`. The
+login facade `BambuNetworkAgent::build_login_cmd()` tail-calls
+`AccountManager::build_login_cmd()` (nlohmann::json); login keys in `.rodata`:
+`account`, `user_id`, `cli_id`, `country_code`, `dev_id`, `tutk`.
+
+## 6. Cross-verification of 05/06 against an independent v02.06.00.50 dump
+
+The FT and wire-protocol docs were checked against an independent `ReadProcessMemory` dump of a
+live `bambu-studio.exe` (v02.06.00.50) and the symbol-bearing Linux `01.07.01.04` build — all
+present, confirming correctness:
+
+- **FT cmd_type strings:** `list_info`, `sub_file`, `file_delete`, `file_download`,
+  `file_upload`, `get_media_capability`, `list_change_notify`, `list_resync_notify`,
+  `task_cancel` — all present.
+- **FTJob RTTI:** `FTRequestListInfoJob`, `FTSubFiles`, `FTDeleteFiles`, `FTDownloadFiles`,
+  `FTUploadFile`, `FTRequestMediaAbility`, `FTJob`; `MqttCloudSubscribeChannel` — all present.
+- **Wire/auth:** `studio_userlogin`, `studio_useroffline`, `X-BBL-Client-ID`, `X-BBL-Device-ID`,
+  `base_domain bambulab.cn`, `sign-in/ticket`, `refreshtoken` — all present.
+
+The `05-wire-protocol.md` and `06-internals.md` claims match independently-obtained binaries.
