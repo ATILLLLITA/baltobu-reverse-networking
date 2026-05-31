@@ -50,9 +50,10 @@ with no Framer classes.
 
 - **Full `push_status` schema** — ✅ **RESOLVED** via the open-source slicer
   (`BambuStudio`/`OrcaSlicer` `DeviceManager.cpp`, AGPL). See `20-pushstatus-schema`.
-- **Framer wire format** (CBOR vs MessagePack, discriminator byte) — **deferred.** A live capture
-  of the cloud broker (`us.mqtt.bambulab.com` → EMQX Cloud Pro on AWS, `54.185.138.159`) confirmed
-  it speaks **TLS 1.3** (19-byte keepalive records: 2-byte MQTT PING + content-type + 16-byte tag),
-  and an idle session emits only keepalive PINGs — no PUBLISH carries the framer payload. Recovering
-  the CBOR/MsgPack discriminator would need a *triggered* cloud PUBLISH plus TLS 1.3 traffic-secret
-  extraction from the slicer's (OpenSSL) memory — high effort, low value. Left open.
+- **Framer wire format** (CBOR vs MessagePack?) — ✅ **RESOLVED** via the open-source SDK header
+  (`src/slic3r/Utils/FileTransferUtils.hpp`, see `24-studio-source-confirmation`). There is **no
+  CBOR/MessagePack**: the `ft_*` control plane is **JSON strings** (`ft_job_create(params_json)`,
+  `ft_job_result.json` / `ft_job_msg.json` are `const char*` JSON), and the only binary is an
+  **opaque `bin`/`bin_size` raw-data side-channel** (the file bytes). So `JsonOrJsonBinFramer` =
+  JSON control + raw file blob, not a CBOR-encoded message. The same header also **confirms our
+  reversed `PrintParams` (44 fields) and `ft_*` signatures** byte-for-byte.

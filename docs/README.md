@@ -98,3 +98,7 @@ against this repo's `05`/`06`.
 ### Companion analysis, wave 5 (23)
 
 23. [`23-live-decrypt-validation.md`](23-live-decrypt-validation.md) — live capture decrypted: OpenSSL TLS 1.2 master-secret extraction via the `session_id` anchor; confirms the local report channel is plain JSON (no binary framing) and validates the `push_status` schema against real on-wire data; cloud channel is TLS 1.3 (framer left open).
+
+### Companion analysis, wave 6 (24)
+
+24. [`24-studio-source-confirmation.md`](24-studio-source-confirmation.md) — cross-check against the open-source (AGPL) BambuStudio SDK headers (`bambu_networking.hpp`, `FileTransferUtils.hpp`): confirms the reversed `PrintParams` (44 fields) and `ft_*` ABI byte-for-byte; resolves the framer (JSON control + opaque `bin` side-channel, no CBOR/msgpack); decodes error -3030 = cloud OSS 3MF-upload failure (curl-60 = environmental cert-verify).
