@@ -88,3 +88,9 @@ against this repo's `05`/`06`.
 17. [`17-ssdp-discovery.md`](17-ssdp-discovery.md) — LAN discovery: `BBL::SsdpDiscovery` on lssdp, `urn:bambulab-com:device:3dprinter:1`, the `Dev*.bambu.com` header set (01.07→02.06 deltas).
 18. [`18-device-cert-security.md`](18-device-cert-security.md) — printer auth: `app_cert_install`/`enc_msg` device-cert handshake, custom pinned X509 chain verify, the `aes256`-wrapped cert fetch, `sec_link`.
 19. [`19-http-client.md`](19-http-client.md) — `BBL::Http` libcurl wrapper, `X-BBL-*` header suite, the refresh-on-401 token-retry loop, pinned TLS + `CURLOPT_RESOLVE` region routing.
+
+### Companion analysis, wave 4 (20–22)
+
+20. [`20-pushstatus-schema.md`](20-pushstatus-schema.md) — the FULL printer `push_status` JSON schema (the SDK forwards it opaquely; schema lives in the open-source AGPL slicer `DeviceManager.cpp`): all categories, `gcode_state` enum, HMS error bit-decode.
+21. [`21-small-subsystems.md`](21-small-subsystems.md) — SFTP/FTPS (`BBL::Sftp`, `bblp`+access-code), telemetry (`track_*`→TrackingManager), DeviceSubscribeManager (local/cloud arbiter), the bind/login state machine.
+22. [`22-overview.md`](22-overview.md) — index + architecture summary of the whole 08–22 companion series; notes the cloud broker is TLS 1.3 (framer wire-format left open).
