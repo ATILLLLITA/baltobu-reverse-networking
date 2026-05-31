@@ -67,10 +67,35 @@ The cloud broker negotiated **TLS 1.3** (`0x1301`). Two independent obstacles to
    because the client pins the Bambu cert chain.
 
 To exercise the cloud framer one must **force cloud-only** (block the printer's LAN IP so the
-local channel fails over to cloud) **and trigger a cloud job/RPC** (e.g. a cloud print or file
-transfer — the binary framer is the cloud job tunnel, not the plain-JSON report relay), then
-extract the TLS 1.3 traffic secrets from a fresh process dump. High effort for the
-CBOR-vs-MessagePack discriminator byte; pursued separately.
+local channel fails over to cloud) **and trigger a cloud job/RPC** (the binary framer is the
+cloud job tunnel, not the plain-JSON report relay).
+
+### Resolution — read the plaintext from the slicer's heap (no TLS needed)
+
+Forcing cloud-only worked (firewall-blocked the printer's LAN IP → Studio failed over to the
+cloud broker), but rather than crack the TLS 1.3 cloud session we simply **read the decrypted
+messages out of `bambu-studio.exe`'s process memory** — a `MiniDumpWriteDump` of the live
+process. The decrypted MQTT bodies sit in the heap as ordinary (pretty-printed) JSON strings:
+
+```json
+{ "command": "push_status", "msg": 1, "bed_temper": 39.66, "nozzle_temper": 40.06, "sequence_id": "1875" }
+```
+
+with the real topics `device/<sn>/report` and `device/<sn>/request` present (51 `push_status`
+hits). The bytes preceding each `{"print":…}` are heap-allocator metadata, **not** a framing
+header. So **cloud device traffic is plain JSON too** — the `JsonOrJsonBinFramer` binary path is
+**not** used for the report/command stream on either channel.
+
+`cmdtype` / `job_id` / `sub_file` were **absent** from memory (no file-transfer job was running),
+so the binary framer (its strings `JsonOrJsonBinFramer` / `SimpleFramer` are present in `.text`)
+is confirmed **scoped to the `ft_*` cloud job tunnel** and only materialises during an actual
+cloud file transfer. Net: the CBOR-vs-MessagePack discriminator is the *only* residual unknown,
+and it never appears in normal device messaging.
+
+> **Technique note.** Reading decrypted application messages from the client's process memory
+> sidesteps TLS entirely (including TLS 1.3) — useful when the app's static OpenSSL ignores
+> `SSLKEYLOGFILE` and a downgrade is blocked by cert pinning. No account tokens or secrets are
+> reproduced here.
 
 > Captured/decrypted on the operator's own machine and printer for interoperability. No account
 > tokens, keys, serial-bound secrets, or the master secret value are published here.
