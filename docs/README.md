@@ -107,3 +107,7 @@ against this repo's `05`/`06`.
 
 25. [`25-camera-local-protocol.md`](25-camera-local-protocol.md) — the LOCAL camera is fully reimplementable: TCP-6000 MJPEG (80-byte `bblp`+access-code auth, 16-byte frame header) and RTSPS-H.264 (P1S/X1) — no vendor keys. Remote (TUTK Kalay / Agora) is cloud-minted and vendor-locked (Kalay license is the hard blocker; Agora is token-gated).
 26. [`26-ref-clusterm-impl.md`](26-ref-clusterm-impl.md) — cross-reference to ClusterM/open-bamboo-networking (working AGPL clean-room): it closes the local camera (both transports) and MQTT credentials (cloud password = access_token; `u_<uid>` / `bblp`); it leaves open the MQTT-command RSA-SHA256 signing (bypassed via Developer Mode, else 84033543), the farm secret, remote camera, and the cloud FT tunnel.
+
+### Companion analysis, wave 8 (27)
+
+27. [`27-mqtt-sec-app-cert.md`](27-mqtt-sec-app-cert.md) — the MQTT-Sec / app_cert command-security crypto that closes the last Tier-1 gap (absent from this repo, ClusterM, and OpenBambuAPI): it is **RSA-PKCS#1 encryption with the printer's own certificate**, not an RSA-SHA256 signature — `app_cert_install` provisions `printer_cert`; the login challenge is RSA-encrypted with that cert (CertId = decimal serial); once secure, each command's `sequence_id`/`url` is sent RSA-encrypted as `*_enc`. Recovered from the official server + a working farm clone (implemented, not yet wire-verified against a secure printer).
