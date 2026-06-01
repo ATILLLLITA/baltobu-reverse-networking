@@ -1,97 +1,87 @@
-# MQTT-Sec / app_cert security — the command-encryption + challenge crypto
+# MQTT-Sec / app_cert command-security crypto
 
-The one Tier-1 gap that baltobu, ClusterM, and OpenBambuAPI all leave open: how a **secured**
-(non-developer-mode) printer authenticates the server and protects MQTT commands. Recovered by
-reversing the **official** Bambu Farm Manager (Go) server and re-implemented in a working farm
-clone (`bambu-farm-server-clone`). It is **RSA-PKCS#1 v1.5 encryption with the printer's own
-certificate**, *not* an RSA-SHA256 signature header (ClusterM's guess).
+The Tier-1 gap baltobu, ClusterM, and OpenBambuAPI leave open: how a **secured**
+(non-developer-mode) printer authenticates the client and protects MQTT/HTTP commands.
 
-> ⚠️ **Confidence:** reconstructed from the official server binary + a working clone, but our
-> test printer ran **device-insecure** firmware (no MQTT-Sec), so the secured path is
-> **implemented, not yet wire-verified against a secure printer**. Field names / algorithm are
-> from the official server; treat byte-exactness as "high-confidence, unverified".
+> **Attribution & correction.** The authoritative mechanism below is documented in the **Software
+> Freedom Conservancy `reverse-networking` repo, `authorization-control` branch**
+> (`f.sfconservancy.org/j4k0xb/reverse-networking`, *Authorization Control/*: `4. App
+> Certificates`, `5. MQTT`, `6. HTTP`, `3. Renewal`). An earlier reconstruction of ours (from a
+> farm-server clone) modelled this as `sequence_id_enc` + an RSA challenge — that was **wrong**;
+> the real scheme is an **RSA-SHA256 signature with the *app* private key** plus **field
+> encryption with the *device* public key**, as below. Our test printer ran *device-insecure*
+> firmware so we never exercised it; the SFC branch did.
 
-## Pieces
+## Capability gate
 
-1. **`app_cert_install` / `app_cert_list`** (MQTT `security` namespace) — provisioning.
-2. **The login challenge ticket** — RSA-encrypted challenge proving the server holds (talks to)
-   the device cert.
-3. **Secure payload** — once a session is "secure", each command's `sequence_id` (and the
-   `project_file` `url`) is RSA-encrypted with the printer cert and sent as `*_enc`.
+A secured printer advertises support via **`print.flag3` bit 16** in `push_status`. Only then do
+clients sign/encrypt.
 
-## 1. `app_cert_install` (security namespace, server → printer)
+## App certificate acquisition (cloud) — `3. Renewal`
 
+The **app private key is issued by the cloud**, not extracted from the binary:
+
+```
+GET https://api.bambulab.com/v1/iot-service/api/user/applications/{enc_secret_b64}/cert?aes256={wrapped_key_b64}&ver=1
+```
+(the same `/applications/{id}/cert?aes256=…&ver=1` endpoint noted in `18-device-cert-security`).
+
+- **`bootstrap_secret`** = hardcoded in the client = the app-cert CN prefix
+  (`GLOF…-…`) + 16 hex chars ("to hinder straightforward RE").
+- It is **AES-256-GCM**-encrypted under a random session key; the session key is **RSA-wrapped**
+  with the service's public key; both go base64 in the URL.
+- The server returns the **cert chain (PEM)** + the **AES-256-GCM-encrypted app private key**,
+  which the client decrypts with the session key and stores for signing/encryption.
+- The app certificate is **shared across all installations** (not per-device): chain
+  `application_root.bambulab.com` → intermediate → leaf, RSA-2048.
+
+## MQTT command authorization — `5. MQTT`
+
+Two independent layers:
+
+**(a) Signature — the `header` object (all critical commands).** RSA-SHA256 over the **complete
+JSON payload** (UTF-8 bytes), signed with the **app private key**:
 ```json
-{ "security": { "sequence_id": "<seq>", "command": "app_cert_install",
-                "app_cert": "<PEM>", "crl": "<CRL>" } }
+"header": {
+  "sign_ver":   "v1.0",
+  "sign_alg":   "RSA_SHA256",
+  "sign_string":"<base64(RSA_sign(app_priv, utf8(json)))>",
+  "cert_id":    "<app_cert.serialNumber.lower() + app_cert.issuer>",
+  "payload_len":"<utf8 byte length of the payload>"
+}
 ```
-The printer replies in `security` with a result; on success the server records the
-**`printer_cert`** (the printer's own X.509, returned/known from the exchange) and advances a
-per-device `security_session` (tracking `app_cert_sequence_id`, install success/fail, sequence
-mismatch). `app_cert_list` enumerates installed certs. (`mqtt-transport.js` handles
-`app_cert_install`/`app_cert_list`, `printer_cert`, `security_result`, the `security_session`
-state machine, and a sequence-mismatch guard.)
+*"The `header` object proves the request content was produced by the holder of the app private key."*
 
-## 2. Login challenge ticket (RSA-encrypted with the device cert)
+**(b) Field encryption — `project_file` / `gcode_line` only.** The sensitive field is RSA-encrypted
+with the **device certificate public key** and added as a parallel `*_enc` field (cleartext kept;
+≤ ~245 bytes per RSA):
+- `print.project_file.url` → **`url_enc`**
+- `print.gcode_line.param` → **`param_enc`**
 
-To prove identity, the server issues a ticket whose challenge is **RSA-PKCS#1 v1.5 encrypted
-with the printer certificate's public key** (`bambu-ticket.js`):
-
-```
-org_challenge = random 8 chars from
-   [a-zA-Z0-9!@#$%^*()-_=+[]{},<>?/]
-enc_challenge = base64( RSA_PKCS1_encrypt( printer_cert.pubkey, org_challenge ) )
-
-ticket_DTO   = { "challenge": enc_challenge, "cert_id": <CertId>, "ts": <unix_sec> }
-ticket       = base64( JSON( ticket_DTO ) )
-```
-
-- **`CertId`** = the certificate **serial number as a DECIMAL big-integer string** (the official
-  Go server uses `x509.Certificate.SerialNumber.String()`; a hex serial must be converted to
-  decimal — a real interop gotcha).
-- Verification: the printer decrypts the challenge with its private key and returns a response;
-  the server checks `SHA256(response) == SHA256(org_challenge)` and that `cert_id` matches.
-
-This is the concrete shape of the `enc_msg` / device-cert handshake (the failures of which are
-the `0x05022647…` codes in `13-error-codes`).
-
-## 3. Secure payload — per-command field encryption
-
-Once `security_session.state == 3` and a `printer_cert` is known
-(`shouldUseSecurePayload(printer)`), every outgoing command is rewritten: for each protected
-key the plaintext value is removed and an RSA-encrypted `*_enc` sibling is added
-(`secure-payload.js`):
-
-```
-for key in [print.sequence_id, security.sequence_id, liveview.sequence_id,
-            update.sequence_id, upgrade.sequence_id, system.sequence_id,
-            upload.sequence_id, camera.sequence_id]:
-    value         = payload[key]
-    payload[key+"_enc"] = base64( RSA_PKCS1_encrypt( printer_cert.pubkey, str(value) ) )
-    del payload[key]
+Order: field-encrypt first, then sign the whole object. Example:
+```json
+{ "print": { "command":"project_file", "url":"file:///…",
+             "url_enc":"<base64 RSA(device_pub, url)>" },
+  "header": { "sign_ver":"v1.0","sign_alg":"RSA_SHA256",
+              "sign_string":"<…>","cert_id":"<…>","payload_len":123 } }
 ```
 
-i.e. `print.sequence_id` → `print.sequence_id_enc`. The same construction applies to the
-`project_file` URL (`url` → **`url_enc`**). So a "signed" command is really a command whose
-`sequence_id`/`url` are **RSA-encrypted with the printer's cert**; a printer that can't decrypt
-them (wrong/absent cert) rejects the command with a verification error (`84033543`).
+## HTTP authorization — `6. HTTP`
 
-## Why our printer didn't need this
-
-In `LAN_FARM` our test printer reported **`device insecure`** (no MQTT-Sec), so commands were
-plaintext JSON inside TLS and none of the above was engaged (`BFM_MQTT_SEC_REQUIRED=false`,
-gated by a `report.flag3` MQTT-Sec bit). The mechanism above is what a **secured** printer
-requires — implement it to support stock/secure firmware without Developer Mode.
+A possession token (not a content signature):
+- **`x-bbl-device-security-sign`** = `base64( RSA_Encrypt_NoPadding( app_priv, utf8(unix_ms_decimal) ) )`
+  — deterministic RSA (no padding) over the current millisecond timestamp.
+- **`x-bbl-app-certification-id`** = `issuer + ":" + serialNumber.lower()`.
 
 ## For a reimplementation
 
-Combine this with the rest of the corpus and the LAN/farm library is feature-complete for
-secure printers too:
-- get the printer cert via `app_cert_install` → store `printer_cert`,
-- gate on the MQTT-Sec capability bit,
-- RSA-PKCS1-encrypt `sequence_id`/`url` per command (secure-payload),
-- answer the cert challenge with the decimal-serial `cert_id`.
+To drive **stock/secure** printers (no Developer Mode):
+1. Acquire the app cert + private key from the cloud (`bootstrap_secret` → applications/cert) — needs a Bambu cloud account; the `bootstrap_secret` is in the binary.
+2. Get the device cert (printer's own, via `app_cert_install`).
+3. Per command: `url_enc`/`param_enc` with the device pubkey (for `project_file`/`gcode_line`), then append the `header` RSA-SHA256 signature with the app private key.
+4. For HTTP: add `x-bbl-device-security-sign` + `x-bbl-app-certification-id`.
 
-Remaining unknowns are now only: **wire-verification against a secure printer**, the **cloud
-`ft_*` tunnel**, and the **remote camera** (vendor Kalay/Agora). No secret key material is
-reproduced here — algorithm and field names only.
+This closes the command-security gap. The remaining unknowns are now only the **cloud `ft_*`
+tunnel wire** and the **remote camera** (vendor Kalay/Agora). Full detail + the captured cert
+chain/CRL are in the SFC `authorization-control` branch cited above; no secret key material is
+reproduced here.
