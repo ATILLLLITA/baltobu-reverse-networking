@@ -104,6 +104,25 @@ types and optionality, the library-internal and Bambu application
 error codes, the login and bind state machine, the FT command enum,
 and the agent's internal struct layout.
 
+## Companion analysis and live validation (docs 08–31)
+
+The series has since been extended well beyond the initial static
+analysis. Later documents cross-check the findings against the
+symbol-bearing Linux `libbambu_networking.so` of the same family,
+validate the wire protocol against live on-wire captures, and map the
+subsystems the first pass left open: the camera/file media plane
+(ThroughTek Kalay + Agora), the OSS/S3 cloud-print upload, the MQTT
+command-security layer (app-certificate RSA-SHA256 signing), and the
+cloud file-transfer tunnel.
+[`docs/31-status-and-remaining-gate.md`](docs/31-status-and-remaining-gate.md)
+is the capstone: it states what is closed and the single server-side
+gate that remains — application-certificate *acquisition*, which depends
+on a vendor-embedded client key that is out of scope for clean-room
+interop, exactly as the Kalay license is for the P2P transports. All of
+this is fresh-prose documentation under the same clean-room boundary
+described below; see [`docs/README.md`](docs/README.md) for the full
+reading order (waves 08–31).
+
 ## Quick start
 
 To re-derive every artefact in `output/` from the packed DLL:
