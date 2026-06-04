@@ -13,10 +13,12 @@ ABI recovered here is the boundary Bambu themselves expose to their
 AGPLv3 application; rebuilding a free library against that boundary is
 exactly what AGPLv3 exists to enable.
 
-The matching Linux `libbambu_networking.so` and macOS
-`libbambu_networking.dylib` have not yet been analyzed. The public ABI
-is expected to match across the three operating systems but that
-hypothesis is yet to be confirmed.
+The matching Linux `libbambu_networking.so` has since been
+cross-analyzed (a later `02.07`-family build under the same VMProtect
+protector; see [`docs/28-linux-so-recovery.md`](docs/28-linux-so-recovery.md)),
+which confirms the public ABI matches between Windows and Linux. The
+macOS `libbambu_networking.dylib` has not yet been analyzed but is
+expected to match.
 
 ## Start here
 
@@ -83,6 +85,19 @@ For the rest of the documentation in reading order, see
 The Authenticode signature is intact and validates against the OS
 trust store. The analyzed DLL is a genuine, untampered Bambu Lab build,
 but this was expected as gathered automatically by running official Bambu Studio.
+
+The table above is the **primary** analyzed artefact. The companion
+analysis (docs 08–31) additionally draws on the sources below — analysis
+inputs only; no vendor binary is redistributed here:
+
+| Companion source | Provenance |
+|---|---|
+| Linux `libbambu_networking.so` | a later `02.07`-family build under the same VMProtect 3.x protector; used for cross-source ABI confirmation ([`docs/28-linux-so-recovery.md`](docs/28-linux-so-recovery.md)) |
+| Symbol-bearing Linux build `01.07.01.04` | retains demangled C++ symbols; used to recover exact ABI signatures ([`docs/08-linux-rosetta.md`](docs/08-linux-rosetta.md)) |
+| Live `02.07.x` account / printer captures | on-wire validation of the login, print, command-security, and file-transfer flows ([`docs/29-cloud-print-live.md`](docs/29-cloud-print-live.md)) |
+
+A consolidated, step-by-step reproduction guide for every method below is
+in [`docs/32-reproduction-methods.md`](docs/32-reproduction-methods.md).
 
 ## What has been recovered
 
