@@ -87,6 +87,17 @@ So the cloud ttcode response selects **which transport** the client uses:
 - Cloud relay via Agora SD-RTN → `bambu:///agora?app=...&region=...`
 - LAN → `bambu:///local/...`
 
+> **Live-captured TUTK URL (confirmed, redacted).** The full `bambu:///tutk?…` query the client
+> builds from the `ttcode` response is:
+> ```
+> bambu:///tutk?uid=<ttcode>&authkey=<8hex>&passwd=<6hex>&region=us&device=<serial>&net_ver=<plugin_ver>&dev_ver=<fw_ver>&refresh_url=1&…
+> ```
+> Note `uid` carries the **`ttcode` value** (not the device serial — the serial is in `device=`);
+> `authkey`/`passwd`/`region` come straight from the `ttcode` response (`type:"tutk"`), and
+> `net_ver`/`dev_ver` are the plugin and printer-firmware versions. On the test account `agora` was
+> disabled (`agora_service:"disable"`, `tutk_server:"enable"` in `push_status`) so only the TUTK
+> form was emitted. See [`29`](29-cloud-print-live.md).
+
 **[inferred]** The cloud decides P2P-vs-Agora based on NAT/relay reachability; both are "cloud" liveview
 from the user's perspective. The encrypted `ttcode_enc` field is used when the device's key info says the
 payload must be encrypted (`enc_msg: get_camera_url_for_golive, dev_id = {} has no encrypt flag info`).

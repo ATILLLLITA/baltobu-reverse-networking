@@ -453,7 +453,7 @@ filled with host, IDs, and so on.
 - `/user-service/user/consent`
 - `/user-service/my/profile`
 - `/user-service/my/logout`
-- `/user-service/my/pincode/<dev_id>`
+- `/user-service/my/pincode/<ping_code>` *(the bind/ping code argument of `ping_bind`, carried in the path — not the dev_id; confirmed by behavioral oracle, see [`28`](28-linux-so-recovery.md))*
 - `/user-service/my/messages?type=<t>&after=<id>&limit=<n>`
 - `/user-service/my/setting`
 - `/user-service/my/ticket/<id>`
@@ -483,7 +483,7 @@ filled with host, IDs, and so on.
 ### Tasks and history
 
 - `/user-service/my/task` and `/my/task/<id>`
-- `/user-service/my/tasks?deviceId=<dev>&limit=<n>`
+- `/user-service/my/tasks?deviceId=<dev>&limit=<n>&offset=<n>&status=<n>` *(`limit`/`offset`/`status` always emitted, keys alphabetical; `deviceId` omitted when empty — confirmed live, see [`28`](28-linux-so-recovery.md)/[`29`](29-cloud-print-live.md))*
 
 ### Makerworld
 
