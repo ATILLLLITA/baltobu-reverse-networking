@@ -69,8 +69,13 @@ Order: field-encrypt first, then sign the whole object. Example:
 ## HTTP authorization — `6. HTTP`
 
 A possession token (not a content signature):
-- **`x-bbl-device-security-sign`** = `base64( RSA_Encrypt_NoPadding( app_priv, utf8(unix_ms_decimal) ) )`
-  — deterministic RSA (no padding) over the current millisecond timestamp.
+- **`x-bbl-device-security-sign`** = `base64( RSA_sign_PKCS1v15( app_priv, utf8(unix_ms_decimal) ) )`
+  — the app private key signs the current millisecond timestamp with **PKCS#1 v1.5 (type 1)**
+  padding. The recovered RSA block is `00 01 FF…FF 00 ‖ <unix_ms>`, so the server recovers the
+  timestamp with a plain RSA public op. (An earlier draft of this note described this as
+  "no padding"; that is **wrong** — raw RSA over a left-zero-padded timestamp does not validate.
+  Corrected against genuine `x-bbl-device-security-sign` headers observed on a secured printer's
+  live session, where every recovered block carried the type-1 `00 01 FF…00` envelope.)
 - **`x-bbl-app-certification-id`** = `issuer + ":" + serialNumber.lower()`.
 
 ## For a reimplementation
