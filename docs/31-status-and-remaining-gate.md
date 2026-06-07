@@ -69,6 +69,29 @@ encoding bug. (The same account token is accepted on ordinary endpoints
 such as profile/task queries, so the token itself is valid; the gate is
 specific to issuing application certificates.)
 
+> **2026-06-07 update — the "outdated" label is a red herring; the gate is
+> client *identity*, not client *version*.** Live testing with a fresh,
+> valid account token confirms the server does **no** version gating on the
+> reachable surface: a deliberately ancient claimed version
+> (`bambu_network_agent/01.05.00.00`, X-BBL-*-Version `01.05.00.00`) is
+> accepted exactly like the current `02.07.01.51` on both the
+> unauthenticated `…/iot-service/api/slicer/resource` check and the
+> authenticated `…/iot-service/api/user/bind` device list — every response is
+> `code:null` success. The `slicer/resource` endpoint merely *advertises*
+> `software.version=02.07.01.57, force_update=false` (purely advisory). So
+> bumping the version cannot be what clears `code 101`: changing it changes
+> nothing on every endpoint we can reach. This **strengthens** the conclusion
+> above — the `get_app_cert` refusal is an *identity* gate (the embedded
+> application key), and "application outdated" is a misleading server message,
+> not a literal version complaint. The reimplementation now advertises the
+> genuine `02.07.01.x` fingerprint anyway (agent `02.07.01.51` / Studio
+> `02.07.01.57`, plus the previously-missing `X-BBL-Executable-Env: false`)
+> as correctness hygiene, so any *client-side* self-check also passes — see
+> the `cloud-client-fingerprint-02.07.01` branch in the companion
+> `open-bamboo-networking` repo. The `get_app_cert` acquisition endpoint
+> itself still needs an authenticated end-to-end run to confirm `101`
+> persists with the synced fingerprint.
+
 The only known way past `code 101` is to present the client's **embedded
 application private key** — a single, globally-shared secret deliberately
 hidden inside the binary, used so the vendor's server will accept the
